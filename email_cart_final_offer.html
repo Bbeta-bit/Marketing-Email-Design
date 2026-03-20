@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<!--
+  ABANDONED CART — EMAIL 3 of 3: "Final Offer"
+  Purpose: Last-chance cart recovery — gentle urgency + cross-sell, sent 3 days after abandonment
+  Campaign Name (Klaviyo): SC Abandoned Cart – 3 of 3 | Final Offer
+  Subject line: "Last chance — free shipping this week only"
+  Sender: SectorCare only
+  Tone: Gentle urgency — warm Australian brand voice, not aggressive
+  Klaviyo variables: {{ event.item_image_url }}, {{ event.item_name }},
+                     {{ event.item_price }}, {{ event.item_url }}
+  NOTE: "You Might Also Like" section uses placeholder cards — replace manually with real products.
+
+  LOGO:
+  - https://d3k81ch9hvuctc.cloudfront.net/company/W2Ua5v/images/47898cac-310d-44a3-8d9a-29791b93b07d.png
+    → Upload: "SectorCare Logo – Dark and Light Blue" in Klaviyo
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Last chance — free shipping this week only</title>
+<style>
+  #outlook a { padding:0; }
+  body { margin:0; padding:0; background-color:#EBF4FB; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; }
+  table, td { border-collapse:collapse; mso-table-lspace:0; mso-table-rspace:0; }
+  img { border:0; height:auto; line-height:100%; outline:none; text-decoration:none; max-width:100%; }
+  p { margin:0; padding-bottom:1em; }
+  h1, h2, h3 { margin:0; }
+  @media only screen and (max-width:600px) {
+    .email-wrap   { width:100% !important; }
+    .mob-pad      { padding:24px 18px !important; }
+    .hero-title   { font-size:26px !important; line-height:1.25 !important; }
+    .product-img  { width:100% !important; max-width:100% !important; }
+    .rec-col      { display:block !important; width:100% !important;
+                    padding:12px 0 !important; border-right:none !important;
+                    border-bottom:1px solid #E0ECF7 !important; }
+    .rec-col:last-child { border-bottom:none !important; }
+  }
+</style>
+</head>
+<body style="background-color:#EBF4FB;">
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"
+       style="background-color:#EBF4FB;">
+<tr><td align="center" style="padding:28px 10px;">
+
+<table class="email-wrap" border="0" cellpadding="0" cellspacing="0" width="600"
+       style="max-width:600px;">
+
+  <!-- ════ HEADER ════ -->
+  <tr>
+    <td style="background:#ffffff; padding:18px 36px; border-radius:4px 4px 0 0;
+               border-bottom:3px solid #0B3D78;">
+      <a href="https://www.sectorcare.com.au/" target="_blank" style="display:block;">
+        <img alt="SectorCare"
+             src="https://d3k81ch9hvuctc.cloudfront.net/company/W2Ua5v/images/47898cac-310d-44a3-8d9a-29791b93b07d.png"
+             style="height:38px; width:auto; display:block;" height="38"/>
+      </a>
+    </td>
+  </tr>
+
+  <!-- ════ URGENCY BANNER ════ -->
+  <tr>
+    <td style="background:#1A9BAF; padding:14px 36px; text-align:center;">
+      <p style="font-family:Arial, sans-serif; font-size:14px; font-weight:700;
+                color:#ffffff; letter-spacing:1px; text-transform:uppercase;
+                padding-bottom:0;">
+        &#9203;&nbsp; Free Shipping This Week Only &nbsp;&#9203;
+      </p>
+    </td>
+  </tr>
+
+  <!-- ════ HERO ════ -->
+  <tr>
+    <td class="mob-pad" style="background:#0B3D78; padding:40px 48px 32px 48px; text-align:center;">
+      <h1 class="hero-title" style="font-family:Arial, sans-serif; font-size:30px;
+          font-weight:700; color:#ffffff; line-height:1.3; padding-bottom:14px;">
+        Your cart is still waiting for you.
+      </h1>
+      <p style="font-family:Arial, sans-serif; font-size:16px; color:#C8DFF4;
+                line-height:1.6; max-width:440px; margin:0 auto; padding-bottom:0;">
+        Don't miss out on free delivery — complete your order before the week is out.
+      </p>
+    </td>
+  </tr>
+
+  <!-- ════ PRODUCT CARD ════ -->
+  <tr>
+    <td style="background:#ffffff; padding:32px 48px;" class="mob-pad">
+      <p style="font-family:Arial, sans-serif; font-size:12px; font-weight:700;
+                color:#0B3D78; letter-spacing:2px; text-transform:uppercase;
+                padding-bottom:20px;">
+        STILL IN YOUR CART
+      </p>
+
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <!-- Product image -->
+          <td valign="top" width="160" style="padding-right:24px; padding-bottom:16px;">
+            <a href="{{ event.item_url }}" target="_blank">
+              <img class="product-img"
+                   src="{{ event.item_image_url }}"
+                   alt="{{ event.item_name }}"
+                   width="160"
+                   style="width:160px; max-width:160px; border-radius:6px;
+                          border:1px solid #E5EDF5; display:block;"/>
+            </a>
+          </td>
+          <!-- Product details -->
+          <td valign="middle" style="padding-bottom:16px;">
+            <p style="font-family:Arial, sans-serif; font-size:18px; font-weight:700;
+                      color:#0B3D78; line-height:1.35; padding-bottom:8px;">
+              {{ event.item_name }}
+            </p>
+            <p style="font-family:Arial, sans-serif; font-size:22px; font-weight:700;
+                      color:#1A9BAF; padding-bottom:20px;">
+              {{ event.item_price }}
+            </p>
+            <!-- Free shipping badge -->
+            <p style="font-family:Arial, sans-serif; font-size:12px; font-weight:700;
+                      color:#ffffff; background:#1A9BAF; display:inline-block;
+                      padding:5px 12px; border-radius:20px; padding-bottom:5px;
+                      letter-spacing:0.5px; text-transform:uppercase;">
+              Free Shipping Included
+            </p>
+          </td>
+        </tr>
+      </table>
+
+      <!-- Main CTA -->
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td align="center" style="padding-top:8px;">
+            <a href="{{ event.item_url }}" target="_blank"
+               style="display:inline-block; background:#0B3D78; color:#ffffff;
+                      font-family:Arial, sans-serif; font-size:16px; font-weight:700;
+                      text-decoration:none; padding:15px 40px; border-radius:5px;
+                      letter-spacing:0.3px;">
+              Complete My Order &rarr;
+            </a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ════ YOU MIGHT ALSO LIKE ════ -->
+  <tr>
+    <td style="background:#F5F9FD; padding:32px 48px;" class="mob-pad">
+      <p style="font-family:Arial, sans-serif; font-size:12px; font-weight:700;
+                color:#0B3D78; letter-spacing:2px; text-transform:uppercase;
+                padding-bottom:24px; text-align:center;">
+        YOU MIGHT ALSO LIKE
+      </p>
+
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+
+          <!-- Placeholder Product 1 -->
+          <td class="rec-col" valign="top" width="33%" align="center"
+              style="padding:0 10px 0 0; border-right:1px solid #E0ECF7;">
+            <!-- Placeholder image: light grey rectangle -->
+            <div style="width:100%; max-width:140px; height:110px; background:#E2E8EF;
+                        border-radius:6px; margin:0 auto 12px auto; display:block;"></div>
+            <p style="font-family:Arial, sans-serif; font-size:13px; font-weight:700;
+                      color:#0B3D78; line-height:1.4; padding-bottom:6px; text-align:center;">
+              Electric Wheelchair Model X
+            </p>
+            <p style="font-family:Arial, sans-serif; font-size:13px; color:#1A9BAF;
+                      font-weight:700; padding-bottom:10px; text-align:center;">
+              From $2,499
+            </p>
+            <a href="#" target="_blank"
+               style="font-family:Arial, sans-serif; font-size:12px; font-weight:700;
+                      color:#0B3D78; text-decoration:none; border-bottom:2px solid #1A9BAF;
+                      padding-bottom:2px;">
+              View Product
+            </a>
+          </td>
+
+          <!-- Placeholder Product 2 -->
+          <td class="rec-col" valign="top" width="34%" align="center"
+              style="padding:0 10px; border-right:1px solid #E0ECF7;">
+            <div style="width:100%; max-width:140px; height:110px; background:#E2E8EF;
+                        border-radius:6px; margin:0 auto 12px auto; display:block;"></div>
+            <p style="font-family:Arial, sans-serif; font-size:13px; font-weight:700;
+                      color:#0B3D78; line-height:1.4; padding-bottom:6px; text-align:center;">
+              Portable Power Chair Pro
+            </p>
+            <p style="font-family:Arial, sans-serif; font-size:13px; color:#1A9BAF;
+                      font-weight:700; padding-bottom:10px; text-align:center;">
+              From $1,899
+            </p>
+            <a href="#" target="_blank"
+               style="font-family:Arial, sans-serif; font-size:12px; font-weight:700;
+                      color:#0B3D78; text-decoration:none; border-bottom:2px solid #1A9BAF;
+                      padding-bottom:2px;">
+              View Product
+            </a>
+          </td>
+
+          <!-- Placeholder Product 3 -->
+          <td class="rec-col" valign="top" width="33%" align="center"
+              style="padding:0 0 0 10px;">
+            <div style="width:100%; max-width:140px; height:110px; background:#E2E8EF;
+                        border-radius:6px; margin:0 auto 12px auto; display:block;"></div>
+            <p style="font-family:Arial, sans-serif; font-size:13px; font-weight:700;
+                      color:#0B3D78; line-height:1.4; padding-bottom:6px; text-align:center;">
+              Lightweight Folding Chair
+            </p>
+            <p style="font-family:Arial, sans-serif; font-size:13px; color:#1A9BAF;
+                      font-weight:700; padding-bottom:10px; text-align:center;">
+              From $1,199
+            </p>
+            <a href="#" target="_blank"
+               style="font-family:Arial, sans-serif; font-size:12px; font-weight:700;
+                      color:#0B3D78; text-decoration:none; border-bottom:2px solid #1A9BAF;
+                      padding-bottom:2px;">
+              View Product
+            </a>
+          </td>
+
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ════ FOOTER TRUST LINE ════ -->
+  <tr>
+    <td style="background:#ffffff; padding:24px 48px; text-align:center;
+               border-top:1px solid #E0ECF7;" class="mob-pad">
+      <p style="font-family:Arial, sans-serif; font-size:14px; color:#555555;
+                line-height:1.7; padding-bottom:0;">
+        Helping Australians move freely.
+        &nbsp;<strong style="color:#0B3D78;">NDIS registered provider.</strong>&nbsp;
+        Free shipping Australia-wide.
+      </p>
+    </td>
+  </tr>
+
+  <!-- ════ FOOTER ════ -->
+  <tr>
+    <td style="background:#0B3D78; padding:28px 36px; border-radius:0 0 4px 4px; text-align:center;">
+      <p style="font-family:Arial, sans-serif; font-size:13px; color:#C8DFF4;
+                line-height:1.6; padding-bottom:10px;">
+        SectorCare Pty Ltd &nbsp;|&nbsp; NDIS Registered Provider<br/>
+        Australia-wide delivery &nbsp;|&nbsp;
+        <a href="https://www.sectorcare.com.au/" target="_blank"
+           style="color:#4FC3D9; text-decoration:none;">www.sectorcare.com.au</a>
+      </p>
+      <p style="font-family:Arial, sans-serif; font-size:11px; color:#7EA8CC;
+                line-height:1.5; padding-bottom:0;">
+        You received this email because you recently visited our store.<br/>
+        <a href="{{ unsubscribe_url }}" target="_blank"
+           style="color:#7EA8CC; text-decoration:underline;">Unsubscribe</a>
+        &nbsp;&middot;&nbsp;
+        <a href="https://www.sectorcare.com.au/privacy" target="_blank"
+           style="color:#7EA8CC; text-decoration:underline;">Privacy Policy</a>
+      </p>
+    </td>
+  </tr>
+
+</table><!-- /inner -->
+</td></tr>
+</table><!-- /outer -->
+
+</body>
+</html>

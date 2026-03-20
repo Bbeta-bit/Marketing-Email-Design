@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<!--
+  ABANDONED CART — EMAIL 2 of 3: "Reassurance"
+  Purpose: Cart recovery follow-up — address purchase hesitations, sent 24 hrs after Email 1
+  Campaign Name (Klaviyo): SC Abandoned Cart – 2 of 3 | Reassurance
+  Subject line: "Still thinking it over? Here's what makes SectorCare different"
+  Sender: SectorCare only
+  Tone: Helpful, consultative — "we understand this is a big decision"
+  Klaviyo variables: {{ event.item_image_url }}, {{ event.item_name }},
+                     {{ event.item_price }}, {{ event.item_url }}
+
+  LOGO:
+  - https://d3k81ch9hvuctc.cloudfront.net/company/W2Ua5v/images/47898cac-310d-44a3-8d9a-29791b93b07d.png
+    → Upload: "SectorCare Logo – Dark and Light Blue" in Klaviyo
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Still thinking it over? Here's what makes SectorCare different</title>
+<style>
+  #outlook a { padding:0; }
+  body { margin:0; padding:0; background-color:#EBF4FB; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; }
+  table, td { border-collapse:collapse; mso-table-lspace:0; mso-table-rspace:0; }
+  img { border:0; height:auto; line-height:100%; outline:none; text-decoration:none; max-width:100%; }
+  p { margin:0; padding-bottom:1em; }
+  h1, h2, h3 { margin:0; }
+  @media only screen and (max-width:600px) {
+    .email-wrap  { width:100% !important; }
+    .mob-pad     { padding:24px 18px !important; }
+    .hero-title  { font-size:26px !important; line-height:1.25 !important; }
+    .product-img { width:100% !important; max-width:100% !important; }
+    .trust-col   { display:block !important; width:100% !important;
+                   padding:16px 0 !important; border-right:none !important;
+                   border-bottom:1px solid #E0ECF7 !important; }
+    .trust-col:last-child { border-bottom:none !important; }
+  }
+</style>
+</head>
+<body style="background-color:#EBF4FB;">
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"
+       style="background-color:#EBF4FB;">
+<tr><td align="center" style="padding:28px 10px;">
+
+<table class="email-wrap" border="0" cellpadding="0" cellspacing="0" width="600"
+       style="max-width:600px;">
+
+  <!-- ════ HEADER ════ -->
+  <tr>
+    <td style="background:#ffffff; padding:18px 36px; border-radius:4px 4px 0 0;
+               border-bottom:3px solid #0B3D78;">
+      <a href="https://www.sectorcare.com.au/" target="_blank" style="display:block;">
+        <img alt="SectorCare"
+             src="https://d3k81ch9hvuctc.cloudfront.net/company/W2Ua5v/images/47898cac-310d-44a3-8d9a-29791b93b07d.png"
+             style="height:38px; width:auto; display:block;" height="38"/>
+      </a>
+    </td>
+  </tr>
+
+  <!-- ════ HERO ════ -->
+  <tr>
+    <td class="mob-pad" style="background:#0B3D78; padding:44px 48px 36px 48px; text-align:center;">
+      <p style="font-family:Arial, sans-serif; font-size:12px; font-weight:700;
+                color:#4FC3D9; letter-spacing:3px; text-transform:uppercase; padding-bottom:14px;">
+        STILL IN YOUR CART
+      </p>
+      <h1 class="hero-title" style="font-family:Arial, sans-serif; font-size:30px;
+          font-weight:700; color:#ffffff; line-height:1.3; padding-bottom:18px;">
+        We understand — this is<br/>an important decision.
+      </h1>
+      <p style="font-family:Arial, sans-serif; font-size:16px; color:#C8DFF4;
+                line-height:1.6; max-width:440px; margin:0 auto; padding-bottom:0;">
+        Here's why thousands of Australians trust SectorCare for their mobility needs.
+      </p>
+    </td>
+  </tr>
+
+  <!-- ════ PRODUCT CARD ════ -->
+  <tr>
+    <td style="background:#ffffff; padding:32px 48px 24px 48px;" class="mob-pad">
+      <p style="font-family:Arial, sans-serif; font-size:12px; font-weight:700;
+                color:#0B3D78; letter-spacing:2px; text-transform:uppercase;
+                padding-bottom:20px;">
+        THE ITEM YOU WERE CONSIDERING
+      </p>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td valign="top" width="140" style="padding-right:22px; padding-bottom:16px;">
+            <a href="{{ event.item_url }}" target="_blank">
+              <img class="product-img"
+                   src="{{ event.item_image_url }}"
+                   alt="{{ event.item_name }}"
+                   width="140"
+                   style="width:140px; max-width:140px; border-radius:6px;
+                          border:1px solid #E5EDF5; display:block;"/>
+            </a>
+          </td>
+          <td valign="middle" style="padding-bottom:16px;">
+            <p style="font-family:Arial, sans-serif; font-size:17px; font-weight:700;
+                      color:#0B3D78; line-height:1.35; padding-bottom:8px;">
+              {{ event.item_name }}
+            </p>
+            <p style="font-family:Arial, sans-serif; font-size:20px; font-weight:700;
+                      color:#1A9BAF; padding-bottom:0;">
+              {{ event.item_price }}
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ════ 3 REASSURANCE BLOCKS ════ -->
+  <tr>
+    <td style="background:#F5F9FD; padding:32px 48px;" class="mob-pad">
+      <p style="font-family:Arial, sans-serif; font-size:12px; font-weight:700;
+                color:#0B3D78; letter-spacing:2px; text-transform:uppercase;
+                padding-bottom:24px; text-align:center;">
+        WHY BUY WITH SECTORCARE
+      </p>
+
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+
+          <!-- Block 1: Free Shipping -->
+          <td class="trust-col" valign="top" width="33%" align="center"
+              style="padding:0 12px 0 0; border-right:1px solid #E0ECF7;">
+            <div style="width:56px; height:56px; background:#EBF4FB; border-radius:50%;
+                        text-align:center; line-height:56px; margin:0 auto 12px auto;
+                        font-size:26px;">
+              &#128666;
+            </div>
+            <p style="font-family:Arial, sans-serif; font-size:14px; font-weight:700;
+                      color:#0B3D78; padding-bottom:6px; text-align:center;">
+              Free Shipping
+            </p>
+            <p style="font-family:Arial, sans-serif; font-size:13px; color:#555555;
+                      line-height:1.5; text-align:center; padding-bottom:0;">
+              Australia-wide on every order, no minimum spend.
+            </p>
+          </td>
+
+          <!-- Block 2: Warranty -->
+          <td class="trust-col" valign="top" width="33%" align="center"
+              style="padding:0 12px; border-right:1px solid #E0ECF7;">
+            <div style="width:56px; height:56px; background:#EBF4FB; border-radius:50%;
+                        text-align:center; line-height:56px; margin:0 auto 12px auto;
+                        font-size:26px;">
+              &#9989;
+            </div>
+            <p style="font-family:Arial, sans-serif; font-size:14px; font-weight:700;
+                      color:#0B3D78; padding-bottom:6px; text-align:center;">
+              12-Month Warranty
+            </p>
+            <p style="font-family:Arial, sans-serif; font-size:13px; color:#555555;
+                      line-height:1.5; text-align:center; padding-bottom:0;">
+              Every product covered — buy with complete peace of mind.
+            </p>
+          </td>
+
+          <!-- Block 3: NDIS -->
+          <td class="trust-col" valign="top" width="34%" align="center"
+              style="padding:0 0 0 12px;">
+            <div style="width:56px; height:56px; background:#EBF4FB; border-radius:50%;
+                        text-align:center; line-height:56px; margin:0 auto 12px auto;
+                        font-size:26px;">
+              &#128196;
+            </div>
+            <p style="font-family:Arial, sans-serif; font-size:14px; font-weight:700;
+                      color:#0B3D78; padding-bottom:6px; text-align:center;">
+              NDIS Registered
+            </p>
+            <p style="font-family:Arial, sans-serif; font-size:13px; color:#555555;
+                      line-height:1.5; text-align:center; padding-bottom:0;">
+              We handle the paperwork so you don't have to.
+            </p>
+          </td>
+
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ════ CTA BLOCK ════ -->
+  <tr>
+    <td class="mob-pad" style="background:#ffffff; padding:36px 48px; text-align:center;
+               border-top:1px solid #E0ECF7;">
+      <p style="font-family:Arial, sans-serif; font-size:17px; color:#333333;
+                line-height:1.65; padding-bottom:28px;">
+        Our specialists are available to answer any questions about funding,
+        product fit, or delivery — at no obligation.
+      </p>
+
+      <!-- Primary CTA -->
+      <a href="https://www.sectorcare.com.au/contact" target="_blank"
+         style="display:inline-block; background:#1A9BAF; color:#ffffff;
+                font-family:Arial, sans-serif; font-size:16px; font-weight:700;
+                text-decoration:none; padding:15px 36px; border-radius:5px;
+                letter-spacing:0.3px; margin-bottom:16px;">
+        Talk to Our Team &rarr;
+      </a>
+
+      <br/>
+
+      <!-- Secondary CTA -->
+      <a href="{{ event.item_url }}" target="_blank"
+         style="display:inline-block; color:#0B3D78;
+                font-family:Arial, sans-serif; font-size:14px; font-weight:700;
+                text-decoration:none; padding:10px 20px; border:2px solid #0B3D78;
+                border-radius:5px; margin-top:4px;">
+        Return to Cart
+      </a>
+    </td>
+  </tr>
+
+  <!-- ════ FOOTER ════ -->
+  <tr>
+    <td style="background:#0B3D78; padding:28px 36px; border-radius:0 0 4px 4px; text-align:center;">
+      <p style="font-family:Arial, sans-serif; font-size:13px; color:#C8DFF4;
+                line-height:1.6; padding-bottom:10px;">
+        SectorCare Pty Ltd &nbsp;|&nbsp; NDIS Registered Provider<br/>
+        Australia-wide delivery &nbsp;|&nbsp;
+        <a href="https://www.sectorcare.com.au/" target="_blank"
+           style="color:#4FC3D9; text-decoration:none;">www.sectorcare.com.au</a>
+      </p>
+      <p style="font-family:Arial, sans-serif; font-size:11px; color:#7EA8CC;
+                line-height:1.5; padding-bottom:0;">
+        You received this email because you recently visited our store.<br/>
+        <a href="{{ unsubscribe_url }}" target="_blank"
+           style="color:#7EA8CC; text-decoration:underline;">Unsubscribe</a>
+        &nbsp;&middot;&nbsp;
+        <a href="https://www.sectorcare.com.au/privacy" target="_blank"
+           style="color:#7EA8CC; text-decoration:underline;">Privacy Policy</a>
+      </p>
+    </td>
+  </tr>
+
+</table><!-- /inner -->
+</td></tr>
+</table><!-- /outer -->
+
+</body>
+</html>
