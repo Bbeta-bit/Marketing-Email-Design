@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <!--
   ABANDONED CART — EMAIL 3 of 3: "Final Offer"
-  Purpose: Last-chance cart recovery — gentle urgency + cross-sell, sent 3 days after abandonment
+  Purpose: Last-chance cart recovery — gentle urgency, sent 3 days after abandonment
   Campaign Name (Klaviyo): SC Abandoned Cart – 3 of 3 | Final Offer
   Subject line: "Last chance — free shipping this week only"
   Sender: SectorCare only
   Tone: Gentle urgency — warm Australian brand voice, not aggressive
   Klaviyo variables: {{ event.item_image_url }}, {{ event.item_name }},
                      {{ event.item_price }}, {{ event.item_url }}
-  NOTE: "You Might Also Like" section uses placeholder cards — replace manually with real products.
+  NOTE: Recommended products section to be added later.
 
   LOGO:
   - https://d3k81ch9hvuctc.cloudfront.net/company/W2Ua5v/images/47898cac-310d-44a3-8d9a-29791b93b07d.png
@@ -32,10 +32,6 @@
     .mob-pad      { padding:24px 18px !important; }
     .hero-title   { font-size:26px !important; line-height:1.25 !important; }
     .product-img  { width:100% !important; max-width:100% !important; }
-    .rec-col      { display:block !important; width:100% !important;
-                    padding:12px 0 !important; border-right:none !important;
-                    border-bottom:1px solid #E0ECF7 !important; }
-    .rec-col:last-child { border-bottom:none !important; }
   }
 </style>
 </head>
@@ -140,87 +136,6 @@
               Complete My Order &rarr;
             </a>
           </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-
-  <!-- ════ YOU MIGHT ALSO LIKE ════ -->
-  <tr>
-    <td style="background:#F5F9FD; padding:32px 48px;" class="mob-pad">
-      <p style="font-family:Arial, sans-serif; font-size:12px; font-weight:700;
-                color:#0B3D78; letter-spacing:2px; text-transform:uppercase;
-                padding-bottom:24px; text-align:center;">
-        YOU MIGHT ALSO LIKE
-      </p>
-
-      <table border="0" cellpadding="0" cellspacing="0" width="100%">
-        <tr>
-
-          <!-- Placeholder Product 1 -->
-          <td class="rec-col" valign="top" width="33%" align="center"
-              style="padding:0 10px 0 0; border-right:1px solid #E0ECF7;">
-            <!-- Placeholder image: light grey rectangle -->
-            <div style="width:100%; max-width:140px; height:110px; background:#E2E8EF;
-                        border-radius:6px; margin:0 auto 12px auto; display:block;"></div>
-            <p style="font-family:Arial, sans-serif; font-size:13px; font-weight:700;
-                      color:#0B3D78; line-height:1.4; padding-bottom:6px; text-align:center;">
-              Electric Wheelchair Model X
-            </p>
-            <p style="font-family:Arial, sans-serif; font-size:13px; color:#1A9BAF;
-                      font-weight:700; padding-bottom:10px; text-align:center;">
-              From $2,499
-            </p>
-            <a href="#" target="_blank"
-               style="font-family:Arial, sans-serif; font-size:12px; font-weight:700;
-                      color:#0B3D78; text-decoration:none; border-bottom:2px solid #1A9BAF;
-                      padding-bottom:2px;">
-              View Product
-            </a>
-          </td>
-
-          <!-- Placeholder Product 2 -->
-          <td class="rec-col" valign="top" width="34%" align="center"
-              style="padding:0 10px; border-right:1px solid #E0ECF7;">
-            <div style="width:100%; max-width:140px; height:110px; background:#E2E8EF;
-                        border-radius:6px; margin:0 auto 12px auto; display:block;"></div>
-            <p style="font-family:Arial, sans-serif; font-size:13px; font-weight:700;
-                      color:#0B3D78; line-height:1.4; padding-bottom:6px; text-align:center;">
-              Portable Power Chair Pro
-            </p>
-            <p style="font-family:Arial, sans-serif; font-size:13px; color:#1A9BAF;
-                      font-weight:700; padding-bottom:10px; text-align:center;">
-              From $1,899
-            </p>
-            <a href="#" target="_blank"
-               style="font-family:Arial, sans-serif; font-size:12px; font-weight:700;
-                      color:#0B3D78; text-decoration:none; border-bottom:2px solid #1A9BAF;
-                      padding-bottom:2px;">
-              View Product
-            </a>
-          </td>
-
-          <!-- Placeholder Product 3 -->
-          <td class="rec-col" valign="top" width="33%" align="center"
-              style="padding:0 0 0 10px;">
-            <div style="width:100%; max-width:140px; height:110px; background:#E2E8EF;
-                        border-radius:6px; margin:0 auto 12px auto; display:block;"></div>
-            <p style="font-family:Arial, sans-serif; font-size:13px; font-weight:700;
-                      color:#0B3D78; line-height:1.4; padding-bottom:6px; text-align:center;">
-              Lightweight Folding Chair
-            </p>
-            <p style="font-family:Arial, sans-serif; font-size:13px; color:#1A9BAF;
-                      font-weight:700; padding-bottom:10px; text-align:center;">
-              From $1,199
-            </p>
-            <a href="#" target="_blank"
-               style="font-family:Arial, sans-serif; font-size:12px; font-weight:700;
-                      color:#0B3D78; text-decoration:none; border-bottom:2px solid #1A9BAF;
-                      padding-bottom:2px;">
-              View Product
-            </a>
-          </td>
-
         </tr>
       </table>
     </td>
