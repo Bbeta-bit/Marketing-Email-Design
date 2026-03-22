@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <!--
   ABANDONED CART — EMAIL 3 of 3: "Final Offer"
-  Purpose: Last-chance cart recovery — gentle urgency, sent 3 days after abandonment
+  Purpose: Last-chance cart recovery — gentle urgency + conditional cross-sell,
+           sent 3 days after abandonment
   Campaign Name (Klaviyo): SC Abandoned Cart – 3 of 3 | Final Offer
   Subject line: "Last chance — free shipping this week only"
   Sender: SectorCare only
   Tone: Gentle urgency — warm Australian brand voice, not aggressive
-  Klaviyo variables: {{ event.item_image_url }}, {{ event.item_name }},
-                     {{ event.item_price }}, {{ event.item_url }}
-  NOTE: Recommended products section to be added later.
+  Klaviyo variables:
+    Abandoned item: {{ event.item_image_url }}, {{ event.item_name }},
+                    {{ event.item_price }}, {{ event.item_url }}
+    Related products (conditional on {{ event.related_product_1_name }}):
+      {{ event.related_product_1_image/name/price/url }}
+      {{ event.related_product_2_image/name/price/url }}
+      {{ event.related_product_3_image/name/price/url }}
 
   LOGO:
   - https://d3k81ch9hvuctc.cloudfront.net/company/W2Ua5v/images/47898cac-310d-44a3-8d9a-29791b93b07d.png
@@ -28,10 +33,14 @@
   p { margin:0; padding-bottom:1em; }
   h1, h2, h3 { margin:0; }
   @media only screen and (max-width:600px) {
-    .email-wrap   { width:100% !important; }
-    .mob-pad      { padding:24px 18px !important; }
-    .hero-title   { font-size:26px !important; line-height:1.25 !important; }
-    .product-img  { width:100% !important; max-width:100% !important; }
+    .email-wrap  { width:100% !important; }
+    .mob-pad     { padding:24px 18px !important; }
+    .hero-title  { font-size:26px !important; line-height:1.25 !important; }
+    .product-img { width:100% !important; max-width:100% !important; }
+    .rec-col     { display:block !important; width:100% !important;
+                   padding:16px 0 !important; border-right:none !important;
+                   border-bottom:1px solid #E0ECF7 !important; }
+    .rec-col:last-child { border-bottom:none !important; }
   }
 </style>
 </head>
@@ -70,6 +79,10 @@
   <!-- ════ HERO ════ -->
   <tr>
     <td class="mob-pad" style="background:#0B3D78; padding:40px 48px 32px 48px; text-align:center;">
+      <p style="font-family:Arial, sans-serif; font-size:12px; font-weight:700;
+                color:#4FC3D9; letter-spacing:3px; text-transform:uppercase; padding-bottom:14px;">
+        STILL IN YOUR CART
+      </p>
       <h1 class="hero-title" style="font-family:Arial, sans-serif; font-size:30px;
           font-weight:700; color:#ffffff; line-height:1.3; padding-bottom:14px;">
         Your cart is still waiting for you.
@@ -87,7 +100,7 @@
       <p style="font-family:Arial, sans-serif; font-size:12px; font-weight:700;
                 color:#0B3D78; letter-spacing:2px; text-transform:uppercase;
                 padding-bottom:20px;">
-        STILL IN YOUR CART
+        THE ITEM YOU WERE CONSIDERING
       </p>
 
       <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -140,6 +153,126 @@
       </table>
     </td>
   </tr>
+
+  <!-- ════ YOU MIGHT ALSO LIKE (Klaviyo conditional) ════
+       Entire section is hidden automatically when no related products are passed.
+       Populate event.related_product_1/2/3 fields in the Klaviyo flow to show this block. -->
+  {% if event.related_product_1_name %}
+  <tr>
+    <td style="background:#F5F9FD; padding:32px 48px;" class="mob-pad">
+      <p style="font-family:Arial, sans-serif; font-size:12px; font-weight:700;
+                color:#0B3D78; letter-spacing:2px; text-transform:uppercase;
+                padding-bottom:24px; text-align:center;">
+        YOU MIGHT ALSO LIKE
+      </p>
+
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+
+          <!-- Related Product 1 -->
+          <td class="rec-col" valign="top" width="33%" align="center"
+              style="padding:0 10px 0 0; border-right:1px solid #E0ECF7;">
+            <a href="{{ event.related_product_1_url }}" target="_blank"
+               style="display:block; text-decoration:none;">
+              <img src="{{ event.related_product_1_image }}"
+                   alt="{{ event.related_product_1_name }}"
+                   width="140"
+                   style="width:140px; max-width:140px; height:auto; border-radius:6px;
+                          border:1px solid #E5EDF5; display:block; margin:0 auto 12px auto;"/>
+            </a>
+            <p style="font-family:Arial, sans-serif; font-size:13px; font-weight:700;
+                      color:#0B3D78; line-height:1.4; padding-bottom:6px; text-align:center;">
+              {{ event.related_product_1_name }}
+            </p>
+            <p style="font-family:Arial, sans-serif; font-size:13px; color:#1A9BAF;
+                      font-weight:700; padding-bottom:12px; text-align:center;">
+              {{ event.related_product_1_price }}
+            </p>
+            <table border="0" cellpadding="0" cellspacing="0" align="center">
+              <tr>
+                <td align="center">
+                  <a href="{{ event.related_product_1_url }}" target="_blank"
+                     style="display:inline-block; font-family:Arial, sans-serif; font-size:12px;
+                            font-weight:700; color:#0B3D78; text-decoration:none;
+                            border:2px solid #0B3D78; padding:7px 14px; border-radius:4px;">
+                    View Product
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+
+          <!-- Related Product 2 -->
+          <td class="rec-col" valign="top" width="34%" align="center"
+              style="padding:0 10px; border-right:1px solid #E0ECF7;">
+            <a href="{{ event.related_product_2_url }}" target="_blank"
+               style="display:block; text-decoration:none;">
+              <img src="{{ event.related_product_2_image }}"
+                   alt="{{ event.related_product_2_name }}"
+                   width="140"
+                   style="width:140px; max-width:140px; height:auto; border-radius:6px;
+                          border:1px solid #E5EDF5; display:block; margin:0 auto 12px auto;"/>
+            </a>
+            <p style="font-family:Arial, sans-serif; font-size:13px; font-weight:700;
+                      color:#0B3D78; line-height:1.4; padding-bottom:6px; text-align:center;">
+              {{ event.related_product_2_name }}
+            </p>
+            <p style="font-family:Arial, sans-serif; font-size:13px; color:#1A9BAF;
+                      font-weight:700; padding-bottom:12px; text-align:center;">
+              {{ event.related_product_2_price }}
+            </p>
+            <table border="0" cellpadding="0" cellspacing="0" align="center">
+              <tr>
+                <td align="center">
+                  <a href="{{ event.related_product_2_url }}" target="_blank"
+                     style="display:inline-block; font-family:Arial, sans-serif; font-size:12px;
+                            font-weight:700; color:#0B3D78; text-decoration:none;
+                            border:2px solid #0B3D78; padding:7px 14px; border-radius:4px;">
+                    View Product
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+
+          <!-- Related Product 3 -->
+          <td class="rec-col" valign="top" width="33%" align="center"
+              style="padding:0 0 0 10px;">
+            <a href="{{ event.related_product_3_url }}" target="_blank"
+               style="display:block; text-decoration:none;">
+              <img src="{{ event.related_product_3_image }}"
+                   alt="{{ event.related_product_3_name }}"
+                   width="140"
+                   style="width:140px; max-width:140px; height:auto; border-radius:6px;
+                          border:1px solid #E5EDF5; display:block; margin:0 auto 12px auto;"/>
+            </a>
+            <p style="font-family:Arial, sans-serif; font-size:13px; font-weight:700;
+                      color:#0B3D78; line-height:1.4; padding-bottom:6px; text-align:center;">
+              {{ event.related_product_3_name }}
+            </p>
+            <p style="font-family:Arial, sans-serif; font-size:13px; color:#1A9BAF;
+                      font-weight:700; padding-bottom:12px; text-align:center;">
+              {{ event.related_product_3_price }}
+            </p>
+            <table border="0" cellpadding="0" cellspacing="0" align="center">
+              <tr>
+                <td align="center">
+                  <a href="{{ event.related_product_3_url }}" target="_blank"
+                     style="display:inline-block; font-family:Arial, sans-serif; font-size:12px;
+                            font-weight:700; color:#0B3D78; text-decoration:none;
+                            border:2px solid #0B3D78; padding:7px 14px; border-radius:4px;">
+                    View Product
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+
+        </tr>
+      </table>
+    </td>
+  </tr>
+  {% endif %}
 
   <!-- ════ FOOTER TRUST LINE ════ -->
   <tr>
