@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!--
+  BROWSE ABANDONMENT — EMAIL 1 of 2: "Still Thinking About This One?"
+  Purpose: First-touch browse recovery — warm, educational, no-pressure
+  Campaign Name (Klaviyo): SC Browse Abandonment – 1 | Still Thinking
+  Subject line: Still thinking about the {{ event.ProductName }}?
+  Preview text: Here's everything you need to know before deciding.
+  Sender: Sector Care
+
+  Klaviyo variables: {{ event.ProductName }}, {{ event.ImageURL }},
+                     {{ event.URL }}, {{ event.Price }}
+  Unsubscribe: {% unsubscribe %}
+
+  LOGO:
+  - https://d3k81ch9hvuctc.cloudfront.net/company/W2Ua5v/images/47898cac-310d-44a3-8d9a-29791b93b07d.png
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Still thinking about the {{ event.ProductName }}?</title>
+<style>
+  #outlook a { padding:0; }
+  body { margin:0; padding:0; background-color:#EBF4FB; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; }
+  table, td { border-collapse:collapse; mso-table-lspace:0; mso-table-rspace:0; }
+  img { border:0; height:auto; line-height:100%; outline:none; text-decoration:none; max-width:100%; }
+  p { margin:0; padding-bottom:1em; }
+  h1, h2, h3 { margin:0; }
+  @media only screen and (max-width:600px) {
+    .email-wrap  { width:100% !important; }
+    .mob-pad     { padding:24px 18px !important; }
+    .hero-title  { font-size:26px !important; line-height:1.25 !important; }
+    .product-img { width:100% !important; max-width:100% !important; display:block !important; }
+    .product-img-cell { display:block !important; width:100% !important; padding-right:0 !important; padding-bottom:16px !important; }
+    .product-detail-cell { display:block !important; width:100% !important; }
+  }
+</style>
+</head>
+<body style="background-color:#EBF4FB; margin:0; padding:0;">
+
+<!-- Outer wrapper -->
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"
+       style="background-color:#EBF4FB;">
+<tr><td align="center" style="padding:28px 10px;">
+
+<!-- Inner 600px container -->
+<table class="email-wrap" border="0" cellpadding="0" cellspacing="0" width="600"
+       style="max-width:600px;">
+
+  <!-- ════ HEADER ════ -->
+  <tr>
+    <td style="background:#ffffff; padding:18px 36px; border-radius:4px 4px 0 0;
+               border-bottom:3px solid #0B3D78;">
+      <a href="https://www.sectorcare.com.au/" target="_blank" style="display:block;">
+        <img alt="Sector Care"
+             src="https://d3k81ch9hvuctc.cloudfront.net/company/W2Ua5v/images/47898cac-310d-44a3-8d9a-29791b93b07d.png"
+             style="height:38px; width:auto; display:block;" height="38"/>
+      </a>
+    </td>
+  </tr>
+
+  <!-- ════ HERO ════ -->
+  <tr>
+    <td class="mob-pad" style="background:#0B3D78; padding:44px 48px 36px 48px; text-align:center;">
+      <p style="font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:700;
+                color:#4FC3D9; letter-spacing:3px; text-transform:uppercase; padding-bottom:14px;">
+        YOU WERE BROWSING
+      </p>
+      <h1 class="hero-title" style="font-family:Arial, Helvetica, sans-serif; font-size:30px;
+          font-weight:700; color:#ffffff; line-height:1.3; padding-bottom:18px;">
+        Still thinking about this one?
+      </h1>
+      <p style="font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#C8DFF4;
+                line-height:1.6; max-width:440px; margin:0 auto; padding-bottom:0;">
+        You were checking out the {{ event.ProductName }}. Take your time — we know choosing
+        the right wheelchair is an important decision.
+      </p>
+    </td>
+  </tr>
+
+  <!-- ════ PRODUCT BLOCK ════ -->
+  <tr>
+    <td style="background:#ffffff; padding:36px 48px;" class="mob-pad">
+
+      <p style="font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:700;
+                color:#0B3D78; letter-spacing:2px; text-transform:uppercase;
+                padding-bottom:20px;">
+        THE PRODUCT YOU VIEWED
+      </p>
+
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <!-- Product image -->
+          <td class="product-img-cell" valign="top" width="180"
+              style="padding-right:24px; padding-bottom:8px;">
+            <a href="{{ event.URL }}" target="_blank">
+              <img class="product-img"
+                   src="{{ event.ImageURL }}"
+                   alt="{{ event.ProductName }}"
+                   width="180"
+                   style="width:180px; max-width:180px; border-radius:6px;
+                          border:1px solid #E5EDF5; display:block;"/>
+            </a>
+          </td>
+          <!-- Product details -->
+          <td class="product-detail-cell" valign="middle" style="padding-bottom:8px;">
+            <p style="font-family:Arial, Helvetica, sans-serif; font-size:18px; font-weight:700;
+                      color:#0B3D78; line-height:1.35; padding-bottom:8px;">
+              {{ event.ProductName }}
+            </p>
+            <p style="font-family:Arial, Helvetica, sans-serif; font-size:22px; font-weight:700;
+                      color:#1A9BAF; padding-bottom:20px;">
+              {{ event.Price }}
+            </p>
+            <a href="{{ event.URL }}" target="_blank"
+               style="display:inline-block; background:#0B3D78; color:#ffffff;
+                      font-family:Arial, Helvetica, sans-serif; font-size:15px; font-weight:700;
+                      text-decoration:none; padding:13px 28px; border-radius:5px;
+                      letter-spacing:0.3px;">
+              View Product Details &rarr;
+            </a>
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+
+  <!-- ════ EDUCATIONAL COPY ════ -->
+  <tr>
+    <td class="mob-pad" style="background:#F5F9FD; padding:32px 48px;
+                               border-top:1px solid #E0ECF7; border-bottom:1px solid #E0ECF7;">
+      <p style="font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#333333;
+                line-height:1.7; padding-bottom:0;">
+        Not sure if this model is right for you? Our team specialises in matching the right
+        wheelchair to your specific needs — whether you're self-funded or using your NDIS
+        plan. We're here to help, not to push a sale.
+      </p>
+    </td>
+  </tr>
+
+  <!-- ════ SECONDARY CTA ════ -->
+  <tr>
+    <td class="mob-pad" style="background:#ffffff; padding:28px 48px; text-align:center;">
+      <p style="font-family:Arial, Helvetica, sans-serif; font-size:15px; color:#555555;
+                line-height:1.6; padding-bottom:0;">
+        Have a question?
+        <a href="https://sectorcare.com.au/contact" target="_blank"
+           style="color:#1A9BAF; font-weight:700; text-decoration:underline;">
+          Chat with our team
+        </a>
+      </p>
+    </td>
+  </tr>
+
+  <!-- ════ FOOTER ════ -->
+  <tr>
+    <td style="background:#0B3D78; padding:28px 36px; border-radius:0 0 4px 4px;
+               text-align:center;">
+      <p style="font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#C8DFF4;
+                line-height:1.6; padding-bottom:6px;">
+        Sector Care Pty Ltd &nbsp;|&nbsp; [Address placeholder] &nbsp;|&nbsp; Australia-wide delivery
+      </p>
+      <p style="font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#C8DFF4;
+                line-height:1.6; padding-bottom:10px;">
+        <a href="https://www.sectorcare.com.au/" target="_blank"
+           style="color:#4FC3D9; text-decoration:none;">sectorcare.com.au</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="mailto:hello@sectorcare.com.au"
+           style="color:#4FC3D9; text-decoration:none;">hello@sectorcare.com.au</a>
+      </p>
+      <p style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#7EA8CC;
+                line-height:1.5; padding-bottom:0;">
+        You received this email because you recently browsed our store.<br/>
+        {% unsubscribe %}
+      </p>
+    </td>
+  </tr>
+
+</table><!-- /inner -->
+</td></tr>
+</table><!-- /outer -->
+
+</body>
+</html>
