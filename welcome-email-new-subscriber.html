@@ -7,7 +7,7 @@
   Preview text: Your exclusive discount code is inside.
   Sender: Sector Care
 
-  Klaviyo variables: {{ first_name|default:'there' }},
+  Klaviyo variables: {{ person.first_name|default:"there" }},
                      {{ organization.name }}, {{ organization.full_address }}
   Web view:    {% web_view %}
   Unsubscribe: {% unsubscribe %}
@@ -79,11 +79,13 @@
   <!-- ════ HERO BANNER ════ -->
   <tr>
     <td style="padding:0; line-height:0;">
-      <img class="hero-img"
-           alt="SectorCare — mobility solutions"
-           src="https://cdn11.bigcommerce.com/s-498h0egvgn/images/stencil/original/image-manager/1-2026-01-28t160749.087.jpg"
-           width="600"
-           style="display:block; width:600px; max-width:100%; height:auto;"/>
+      <a href="https://sectorcare.com.au/" target="_blank" style="display:block;">
+        <img class="hero-img"
+             alt="SectorCare — mobility solutions"
+             src="https://cdn11.bigcommerce.com/s-498h0egvgn/images/stencil/original/image-manager/1-2026-01-28t160749.087.jpg"
+             width="600"
+             style="display:block; width:600px; max-width:100%; height:auto;"/>
+      </a>
     </td>
   </tr>
 
@@ -94,7 +96,7 @@
       <!-- Greeting -->
       <p style="font-family:Tahoma, sans-serif; font-size:12px; color:#222222;
                 line-height:1.3; letter-spacing:1px; padding-bottom:12px;">
-        Hi {{ first_name|default:'there' }},
+        Hi {{ person.first_name|default:"there" }},
       </p>
 
       <!-- Paragraph 1 -->
