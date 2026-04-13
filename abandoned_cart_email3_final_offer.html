@@ -1,448 +1,199 @@
 <!DOCTYPE html>
 <!--
-  ABANDONED CART — EMAIL 3 of 3: "Final Offer"
-  Purpose: Last-chance cart recovery — gentle urgency + conditional cross-sell,
-           sent 3 days after abandonment
-  Campaign Name (Klaviyo): SC Abandoned Cart – 3 of 3 | Final Offer
-  Subject line: "Last chance — your cart is waiting"
-  Sender: SectorCare only
-  Tone: Gentle urgency — warm Australian brand voice, not aggressive
-  Klaviyo variables:
-    Abandoned item: {{ event.item_image_url }}, {{ event.item_name }},
-                    {{ event.item_price }}, {{ event.item_url }}
-    Related products (conditional on {{ event.related_product_1_name }}):
-      {{ event.related_product_1_image/name/price/url }}
-      {{ event.related_product_2_image/name/price/url }}
-      {{ event.related_product_3_image/name/price/url }}
-
-  LOGO:
-  - https://d3k81ch9hvuctc.cloudfront.net/company/W2Ua5v/images/47898cac-310d-44a3-8d9a-29791b93b07d.png
-    → Upload: "SectorCare Logo – Dark and Light Blue" in Klaviyo
+  ABANDONED CART EMAIL 3: Final Offer
+  Purpose: Last-chance cart recovery + cross-sell
+  Klaviyo: {{ event.item_* }}, {{ event.related_product_1/2/3_* }}
+  Sender: SectorCare
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Last chance — your cart is waiting</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Your Cart Won't Wait Forever | SectorCare</title>
 <style>
-  #outlook a { padding:0; }
-  body { margin:0; padding:0; background-color:#c9cacf; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; }
-  table, td { border-collapse:collapse; mso-table-lspace:0; mso-table-rspace:0; }
-  img { border:0; height:auto; line-height:100%; outline:none; text-decoration:none; max-width:100%; }
-  p { margin:0; padding-bottom:1em; }
-  h1, h2, h3 { margin:0; }
-  @media only screen and (max-width:600px) {
-    .email-wrap  { width:100% !important; }
-    .mob-pad     { padding:24px 18px !important; }
-    .hero-title  { font-size:28px !important; line-height:1.2 !important; }
-    .product-img { width:100% !important; max-width:100% !important; }
-    .rec-col     { display:block !important; width:100% !important;
-                   padding:16px 0 !important; border-right:none !important;
-                   border-bottom:1px solid #475666 !important; }
-    .rec-col:last-child { border-bottom:none !important; }
-  }
+#outlook a{padding:0}
+body{margin:0;padding:0;background:#f5f7fa;-webkit-text-size-adjust:100%}
+table,td{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0}
+img{border:0;outline:none;text-decoration:none;max-width:100%}
+p,h1,h2,h3{margin:0;padding:0}
+@media only screen and (max-width:600px){
+  .ew{width:100%!important}
+  .mp{padding-left:20px!important;padding-right:20px!important}
+  .pc{width:100%!important;display:block!important;border-right:none!important;border-bottom:1px solid #e4e8ed!important}
+  .cc{width:100%!important;display:block!important;border-right:none!important;padding-bottom:14px!important}
+  .hh{font-size:26px!important}
+}
+
 </style>
 </head>
-<body style="background-color:#c9cacf; margin:0; padding:0;">
-
-<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"
-       style="background-color:#c9cacf;">
-<tr><td align="center" style="padding:28px 10px;">
-
-<table class="email-wrap" border="0" cellpadding="0" cellspacing="0" width="600"
-       style="max-width:600px; background-color:#FFFFFF; box-shadow:0 2px 12px rgba(0,0,0,0.18);">
-
-  <!-- ════ UTILITY BAR ════ -->
+<body style="background-color:#f5f7fa;margin:0;padding:0;">
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:#f5f7fa;">
+<tr><td align="center" style="padding:20px 0 28px;">
+<table class="ew" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;background-color:#FFFFFF;box-shadow:0 2px 16px rgba(0,0,0,0.10);">
   <tr>
-    <td style="background-color:#06141b; padding:7px 20px; text-align:center;">
-      <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:10px; color:#96a3ac; letter-spacing:0.8px; margin:0; padding-bottom:0;">
-        Trouble viewing this email?
-        <a href="{% web_view %}" target="_blank"
-           style="color:#96a3ac; text-decoration:underline;">View in browser</a>
-      </p>
+    <td style="background:#f5f7fa;padding:7px 20px;text-align:center;border-bottom:1px solid #e4e8ed;">
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:10px;color:#475666;">Trouble viewing this email? <a href="{% web_view %}" target="_blank" style="color:#3A9AD9;text-decoration:underline;">View in browser</a></p>
     </td>
   </tr>
-
-  <!-- ════ HEADER ════ -->
   <tr>
-    
-    <td style="background:#FFFFFF; padding:14px 28px; border-bottom:1px solid #e4e8ed;">
-      <table border="0" cellpadding="0" cellspacing="0" width="100%">
-        <tr>
-          <td valign="middle">
-            <a href="https://www.sectorcare.com.au/" target="_blank" style="display:block; line-height:0;">
-        <img alt="SectorCare"
-             src="https://d3k81ch9hvuctc.cloudfront.net/company/W2Ua5v/images/47898cac-310d-44a3-8d9a-29791b93b07d.png"
-             style="height:30px; width:auto; display:block;" height="30"/>
+    <td style="background:#FFFFFF;padding:20px 36px 14px;text-align:center;border-bottom:3px solid #3A9AD9;">
+      <a href="https://sectorcare.com.au/" target="_blank" style="display:inline-block;margin-bottom:8px;">
+        <img alt="SectorCare" src="https://d3k81ch9hvuctc.cloudfront.net/company/W2Ua5v/images/47898cac-310d-44a3-8d9a-29791b93b07d.png" style="height:36px;width:auto;display:block;margin:0 auto;" height="36"/>
       </a>
-          </td>
-          <td valign="middle" align="right" class="nav-links" style="padding-left:12px; white-space:nowrap;">
-          <a href="https://sectorcare.com.au/manual-wheelchair/" target="_blank"
-             style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:10px; font-weight:600; color:#475666;
-                    text-decoration:none; letter-spacing:1.2px; text-transform:uppercase;">WHEELCHAIRS</a>
-          <span style="color:#c9cacf; padding:0 5px;">|</span>
-          <a href="https://sectorcare.com.au/mobility-scooter/" target="_blank"
-             style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:10px; font-weight:600; color:#475666;
-                    text-decoration:none; letter-spacing:1.2px; text-transform:uppercase;">SCOOTERS</a>
-          <span style="color:#c9cacf; padding:0 5px;">|</span>
-          <a href="https://sectorcare.com.au/electric-wheelchair/" target="_blank"
-             style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:10px; font-weight:600; color:#475666;
-                    text-decoration:none; letter-spacing:1.2px; text-transform:uppercase;">POWER CHAIRS</a>
-        </td>
-        </tr>
-      </table>
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;color:#3A9AD9;letter-spacing:3px;text-transform:uppercase;">LAST CHANCE</p>
     </td>
   </tr>
-
-  <!-- ═══ ACCENT STRIPE ═══ -->
   <tr>
-    <td style="background:#3A9AD9; height:3px; line-height:3px; font-size:0; padding:0; mso-line-height-rule:exactly;">&nbsp;</td>
+    <td style="padding:0;line-height:0;font-size:0;">
+      <a href="{{ event.item_url }}" target="_blank" style="display:block;line-height:0;">
+        <img src="https://d3k81ch9hvuctc.cloudfront.net/company/W2Ua5v/images/3559e029-ad75-4195-9ba1-51d6de31f7ab.jpeg" alt="SectorCare" width="600" style="display:block;width:100%;height:auto;"/>
+      </a>
+    </td>
   </tr>
-  <!-- ════ HERO ════ -->
   <tr>
-    <td class="mob-pad" style="background:#111e2d; padding:40px 48px 32px 48px; text-align:center;">
-      <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:10px; font-weight:700;
-                color:#3A9AD9; letter-spacing:2.5px; text-transform:uppercase; padding-bottom:14px;">
-        STILL IN YOUR CART
-      </p>
-      <h1 class="hero-title" style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:36px;
-          font-weight:700; color:#FFFFFF; line-height:1.2; padding-bottom:14px;">
-        Your cart is still waiting for you.
+    <td class="mp" style="background:#FFFFFF;padding:30px 40px 26px;border-bottom:1px solid #e4e8ed;">
+      <h1 class="hh" style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:34px;font-weight:700;color:#111e2d;line-height:1.2;margin:0 0 10px;">
+        Your cart<br/><span style="color:#3A9AD9;">won’t wait forever.</span>
       </h1>
-      <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:15px; color:#96a3ac;
-                line-height:1.6; max-width:440px; margin:0 auto; padding-bottom:0;">
-        Complete your order today — your selected item is ready and waiting.
-      </p>
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:13px;color:#475666;line-height:1.72;margin:0 0 20px;">This is our final reminder. Your saved item may sell out — complete your order today.</p>
+      <table border="0" cellpadding="0" cellspacing="0"><tr>
+        <td style="background:#3A9AD9;border-radius:4px;">
+          <a href="{{ event.item_url }}" target="_blank" style="display:inline-block;padding:11px 28px;font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:11px;font-weight:700;color:#FFFFFF;text-decoration:none;letter-spacing:1.5px;text-transform:uppercase;">COMPLETE YOUR ORDER</a>
+        </td>
+      </tr></table>
     </td>
   </tr>
-
-  <!-- ════ PRODUCT CARD ════ -->
   <tr>
-    <td style="background:#FFFFFF; padding:32px 48px;" class="mob-pad">
-      <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:10px; font-weight:700;
-                color:#111e2d; letter-spacing:2px; text-transform:uppercase;
-                padding-bottom:20px;">
-        THE ITEM YOU WERE CONSIDERING
-      </p>
-
-      <table border="0" cellpadding="0" cellspacing="0" width="100%">
-        <tr>
-          <!-- Product image -->
-          <td valign="top" width="160" style="padding-right:24px; padding-bottom:16px;">
-            <a href="{{ event.item_url }}" target="_blank">
-              <img class="product-img"
-                   src="{{ event.item_image_url }}"
-                   alt="{{ event.item_name }}"
-                   width="160"
-                   style="width:160px; max-width:160px; border-radius:3px;
-                          border:1px solid #c9cacf; display:block;"/>
-            </a>
-          </td>
-          <!-- Product details -->
-          <td valign="middle" style="padding-bottom:16px;">
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:17px; font-weight:700;
-                      color:#111e2d; line-height:1.35; padding-bottom:8px;">
-              {{ event.item_name }}
-            </p>
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:20px; font-weight:700;
-                      color:#475666; padding-bottom:20px;">
-              {{ event.item_price }}
-            </p>
-          </td>
-        </tr>
-      </table>
-
-      <!-- Main CTA -->
-      <table border="0" cellpadding="0" cellspacing="0" width="100%">
-        <tr>
-          <td align="center" style="padding-top:8px;">
-            <table border="0" cellpadding="0" cellspacing="0">
-              <tr>
-                <td style="background-color:#3A9AD9; border-radius:4px;">
-                  <a href="{{ event.item_url }}" target="_blank"
-                     style="display:inline-block; color:#FFFFFF;
-                            font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:13px; font-weight:700;
-                            text-decoration:none; padding:13px 40px;
-                            letter-spacing:2px; text-transform:uppercase;">
-                    COMPLETE MY ORDER &rarr;
-                  </a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-      </table>
+    <td class="mp" style="background:#FFFFFF;padding:28px 40px;border-bottom:1px solid #e4e8ed;">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+        <td valign="top" width="160" style="padding-right:20px;">
+          <a href="{{ event.item_url }}" target="_blank" style="display:block;line-height:0;">
+            <img src="{{ event.item_image_url }}" alt="{{ event.item_name }}" width="160"
+                 style="width:160px;border-radius:4px;border:1px solid #e4e8ed;display:block;"/>
+          </a>
+        </td>
+        <td valign="middle">
+          <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:16px;font-weight:700;color:#111e2d;margin:0 0 6px;">{{ event.item_name }}</p>
+          <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:700;color:#3A9AD9;margin:0 0 18px;">{{ event.item_price }}</p>
+          <table border="0" cellpadding="0" cellspacing="0"><tr>
+            <td style="background:#3A9AD9;border-radius:4px;">
+              <a href="{{ event.item_url }}" target="_blank" style="display:inline-block;padding:11px 24px;font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:11px;font-weight:700;color:#FFFFFF;text-decoration:none;letter-spacing:1.5px;text-transform:uppercase;">COMPLETE ORDER &rarr;</a>
+            </td>
+          </tr></table>
+        </td>
+      </tr></table>
     </td>
   </tr>
-
-  <!-- ════ YOU MIGHT ALSO LIKE (Klaviyo conditional) ════
-       Entire section is hidden automatically when no related products are passed.
-       Populate event.related_product_1/2/3 fields in the Klaviyo flow to show this block. -->
   {% if event.related_product_1_name %}
   <tr>
-    <td style="background:#FFFFFF; padding:28px 48px; border-top:1px solid #c9cacf;" class="mob-pad">
-      <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:10px; font-weight:700;
-                color:#96a3ac; letter-spacing:2px; text-transform:uppercase;
-                padding-bottom:24px; text-align:center;">
-        YOU MIGHT ALSO LIKE
-      </p>
-
-      <table border="0" cellpadding="0" cellspacing="0" width="100%">
-        <tr>
-
-          <!-- Related Product 1 -->
-          <td class="rec-col" valign="top" width="33%" align="center"
-              style="padding:0 10px 0 0; border-right:1px solid #c9cacf;">
-            <a href="{{ event.related_product_1_url }}" target="_blank"
-               style="display:block; text-decoration:none;">
-              <img src="{{ event.related_product_1_image }}"
-                   alt="{{ event.related_product_1_name }}"
-                   width="140"
-                   style="width:140px; max-width:140px; height:auto; border-radius:3px;
-                          border:1px solid #c9cacf; display:block; margin:0 auto 12px auto;"/>
+    <td class="mp" style="background:#FFFFFF;padding:24px 40px 6px;border-bottom:1px solid #e4e8ed;">
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;font-weight:700;color:#3A9AD9;letter-spacing:2.5px;text-transform:uppercase;text-align:center;">YOU MIGHT ALSO LIKE</p>
+    </td>
+  </tr>
+  <tr>
+    <td style="background:#FFFFFF;padding:0 20px 20px;border-bottom:1px solid #e4e8ed;">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+          <td class="pc" width="186" valign="top" style="padding:14px 10px;vertical-align:top;border-right:1px solid #e4e8ed;">
+            <a href="{{ event.related_product_1_url }}" target="_blank" style="display:block;line-height:0;margin-bottom:10px;">
+              <img src="{{ event.related_product_1_image }}" alt="{{ event.related_product_1_name }}" width="166" style="width:100%;border-radius:3px;border:1px solid #e4e8ed;display:block;"/>
             </a>
             <table border="0" cellpadding="0" cellspacing="0" width="100%">
-              <tr>
-                <td height="44" valign="top" style="vertical-align:top; padding-bottom:6px; text-align:center;">
-                  <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:12px; font-weight:700;
-                      color:#111e2d; line-height:1.4; padding-bottom:6px; text-align:center;
-                      letter-spacing:0.5px; text-transform:uppercase;">
-              {{ event.related_product_1_name }}
-            </p>
-                </td>
-              </tr>
-              <tr>
-                <td height="24" valign="top" style="vertical-align:top; padding-bottom:12px; text-align:center;">
-                  <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:12px; color:#475666;
-                      font-weight:700; padding-bottom:12px; text-align:center;">
-              {{ event.related_product_1_price }}
-            </p>
-                </td>
-              </tr>
-              <tr>
-                <td style="text-align:center;">
-                  <table border="0" cellpadding="0" cellspacing="0" align="center">
-              <tr>
-                <td align="center" style="border:1px solid #111e2d; border-radius:3px;">
-                  <a href="{{ event.related_product_1_url }}" target="_blank"
-                     style="display:inline-block;
-                            font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:11px;
-                            font-weight:700; color:#111e2d; text-decoration:none;
-                            padding:7px 14px; letter-spacing:1.5px; text-transform:uppercase;">
-                    View Product
-                  </a>
-                </td>
-              </tr>
-            </table>
-                </td>
-              </tr>
+              <tr><td height="44" valign="top" style="padding-bottom:6px;">
+                <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:10px;font-weight:700;color:#111e2d;line-height:1.35;">{{ event.related_product_1_name }}</p>
+              </td></tr>
+              <tr><td height="24" valign="top" style="padding-bottom:10px;">
+                <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:11px;font-weight:700;color:#3A9AD9;">{{ event.related_product_1_price }}</p>
+              </td></tr>
+              <tr><td>
+                <table border="0" cellpadding="0" cellspacing="0"><tr>
+                  <td style="background:#3A9AD9;border-radius:3px;">
+                    <a href="{{ event.related_product_1_url }}" target="_blank" style="display:inline-block;padding:7px 14px;font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;font-weight:700;color:#FFFFFF;text-decoration:none;letter-spacing:1px;text-transform:uppercase;">VIEW PRODUCT</a>
+                  </td>
+                </tr></table>
+              </td></tr>
             </table>
           </td>
-
-          <!-- Related Product 2 -->
-          <td class="rec-col" valign="top" width="34%" align="center"
-              style="padding:0 10px; border-right:1px solid #c9cacf;">
-            <a href="{{ event.related_product_2_url }}" target="_blank"
-               style="display:block; text-decoration:none;">
-              <img src="{{ event.related_product_2_image }}"
-                   alt="{{ event.related_product_2_name }}"
-                   width="140"
-                   style="width:140px; max-width:140px; height:auto; border-radius:3px;
-                          border:1px solid #c9cacf; display:block; margin:0 auto 12px auto;"/>
+          <td class="pc" width="186" valign="top" style="padding:14px 10px;vertical-align:top;border-right:1px solid #e4e8ed;">
+            <a href="{{ event.related_product_2_url }}" target="_blank" style="display:block;line-height:0;margin-bottom:10px;">
+              <img src="{{ event.related_product_2_image }}" alt="{{ event.related_product_2_name }}" width="166" style="width:100%;border-radius:3px;border:1px solid #e4e8ed;display:block;"/>
             </a>
             <table border="0" cellpadding="0" cellspacing="0" width="100%">
-              <tr>
-                <td height="44" valign="top" style="vertical-align:top; padding-bottom:6px; text-align:center;">
-                  <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:12px; font-weight:700;
-                      color:#111e2d; line-height:1.4; padding-bottom:6px; text-align:center;
-                      letter-spacing:0.5px; text-transform:uppercase;">
-              {{ event.related_product_2_name }}
-            </p>
-                </td>
-              </tr>
-              <tr>
-                <td height="24" valign="top" style="vertical-align:top; padding-bottom:12px; text-align:center;">
-                  <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:12px; color:#475666;
-                      font-weight:700; padding-bottom:12px; text-align:center;">
-              {{ event.related_product_2_price }}
-            </p>
-                </td>
-              </tr>
-              <tr>
-                <td style="text-align:center;">
-                  <table border="0" cellpadding="0" cellspacing="0" align="center">
-              <tr>
-                <td align="center" style="border:1px solid #111e2d; border-radius:3px;">
-                  <a href="{{ event.related_product_2_url }}" target="_blank"
-                     style="display:inline-block;
-                            font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:11px;
-                            font-weight:700; color:#111e2d; text-decoration:none;
-                            padding:7px 14px; letter-spacing:1.5px; text-transform:uppercase;">
-                    View Product
-                  </a>
-                </td>
-              </tr>
-            </table>
-                </td>
-              </tr>
+              <tr><td height="44" valign="top" style="padding-bottom:6px;">
+                <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:10px;font-weight:700;color:#111e2d;line-height:1.35;">{{ event.related_product_2_name }}</p>
+              </td></tr>
+              <tr><td height="24" valign="top" style="padding-bottom:10px;">
+                <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:11px;font-weight:700;color:#3A9AD9;">{{ event.related_product_2_price }}</p>
+              </td></tr>
+              <tr><td>
+                <table border="0" cellpadding="0" cellspacing="0"><tr>
+                  <td style="background:#3A9AD9;border-radius:3px;">
+                    <a href="{{ event.related_product_2_url }}" target="_blank" style="display:inline-block;padding:7px 14px;font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;font-weight:700;color:#FFFFFF;text-decoration:none;letter-spacing:1px;text-transform:uppercase;">VIEW PRODUCT</a>
+                  </td>
+                </tr></table>
+              </td></tr>
             </table>
           </td>
-
-          <!-- Related Product 3 -->
-          <td class="rec-col" valign="top" width="33%" align="center"
-              style="padding:0 0 0 10px;">
-            <a href="{{ event.related_product_3_url }}" target="_blank"
-               style="display:block; text-decoration:none;">
-              <img src="{{ event.related_product_3_image }}"
-                   alt="{{ event.related_product_3_name }}"
-                   width="140"
-                   style="width:140px; max-width:140px; height:auto; border-radius:3px;
-                          border:1px solid #c9cacf; display:block; margin:0 auto 12px auto;"/>
+          <td class="pc" width="186" valign="top" style="padding:14px 10px;vertical-align:top;">
+            <a href="{{ event.related_product_3_url }}" target="_blank" style="display:block;line-height:0;margin-bottom:10px;">
+              <img src="{{ event.related_product_3_image }}" alt="{{ event.related_product_3_name }}" width="166" style="width:100%;border-radius:3px;border:1px solid #e4e8ed;display:block;"/>
             </a>
             <table border="0" cellpadding="0" cellspacing="0" width="100%">
-              <tr>
-                <td height="44" valign="top" style="vertical-align:top; padding-bottom:6px; text-align:center;">
-                  <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:12px; font-weight:700;
-                      color:#111e2d; line-height:1.4; padding-bottom:6px; text-align:center;
-                      letter-spacing:0.5px; text-transform:uppercase;">
-              {{ event.related_product_3_name }}
-            </p>
-                </td>
-              </tr>
-              <tr>
-                <td height="24" valign="top" style="vertical-align:top; padding-bottom:12px; text-align:center;">
-                  <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:12px; color:#475666;
-                      font-weight:700; padding-bottom:12px; text-align:center;">
-              {{ event.related_product_3_price }}
-            </p>
-                </td>
-              </tr>
-              <tr>
-                <td style="text-align:center;">
-                  <table border="0" cellpadding="0" cellspacing="0" align="center">
-              <tr>
-                <td align="center" style="border:1px solid #111e2d; border-radius:3px;">
-                  <a href="{{ event.related_product_3_url }}" target="_blank"
-                     style="display:inline-block;
-                            font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:11px;
-                            font-weight:700; color:#111e2d; text-decoration:none;
-                            padding:7px 14px; letter-spacing:1.5px; text-transform:uppercase;">
-                    View Product
-                  </a>
-                </td>
-              </tr>
-            </table>
-                </td>
-              </tr>
+              <tr><td height="44" valign="top" style="padding-bottom:6px;">
+                <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:10px;font-weight:700;color:#111e2d;line-height:1.35;">{{ event.related_product_3_name }}</p>
+              </td></tr>
+              <tr><td height="24" valign="top" style="padding-bottom:10px;">
+                <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:11px;font-weight:700;color:#3A9AD9;">{{ event.related_product_3_price }}</p>
+              </td></tr>
+              <tr><td>
+                <table border="0" cellpadding="0" cellspacing="0"><tr>
+                  <td style="background:#3A9AD9;border-radius:3px;">
+                    <a href="{{ event.related_product_3_url }}" target="_blank" style="display:inline-block;padding:7px 14px;font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;font-weight:700;color:#FFFFFF;text-decoration:none;letter-spacing:1px;text-transform:uppercase;">VIEW PRODUCT</a>
+                  </td>
+                </tr></table>
+              </td></tr>
             </table>
           </td>
-
-        </tr>
-      </table>
+      </tr></table>
     </td>
   </tr>
   {% endif %}
-
-  <!-- ════ CLOSING TRUST LINE ════ -->
   <tr>
-    <td style="background:#FFFFFF; padding:22px 48px; text-align:center;
-               border-top:1px solid #c9cacf;" class="mob-pad">
-      <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:13px; color:#475666;
-                line-height:1.7; padding-bottom:0;">
-        Helping Australians move freely.
-      </p>
+    <td style="background:#f5f7fa;padding:8px 40px;text-align:center;border-top:1px solid #e4e8ed;">
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;color:#3A9AD9;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;">SectorCare is a Registered NDIS Provider</p>
     </td>
   </tr>
-
-  <!-- ════ SOCIAL PROOF ════ -->
   <tr>
-    <td style="background:#06141b; padding:28px 36px; text-align:center; border-top:1px solid #1a2f40;">
-      <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:18px; color:#3A9AD9; letter-spacing:2px; padding-bottom:10px;">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-      <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:13px; color:#FFFFFF; line-height:1.7; font-style:italic; max-width:440px; margin:0 auto; padding-bottom:12px;">
-        &ldquo;The team at SectorCare helped me find exactly the right product for my needs. The service was outstanding from start to finish.&rdquo;
-      </p>
-      <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:9px; color:#96a3ac; letter-spacing:1.5px; text-transform:uppercase; padding-bottom:0;">
-        &#9733;&nbsp;Verified SectorCare Customer
-      </p>
+    <td style="background:#f5f7fa;padding:18px 40px 24px;border-bottom:1px solid #e4e8ed;">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+        <td class="cc" width="50%" valign="top" style="text-align:center;border-right:1px solid #e4e8ed;padding:0 12px;">
+          <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:20px;color:#3A9AD9;margin:0 0 4px;">&#9742;&#xFE0E;</p>
+          <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:10px;font-weight:700;color:#111e2d;margin:0 0 3px;">Phone</p>
+          <a href="tel:0291725607" style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:13px;font-weight:700;color:#111e2d;text-decoration:none;">02 9172 5607</a>
+          <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;color:#475666;margin:3px 0 0;">Mon – Fri, 9am – 5pm AEST</p>
+        </td>
+        <td class="cc" width="50%" valign="top" style="text-align:center;padding:0 12px;">
+          <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:20px;color:#3A9AD9;margin:0 0 4px;">&#9993;</p>
+          <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:10px;font-weight:700;color:#111e2d;margin:0 0 3px;">Email</p>
+          <a href="mailto:sales@sectorcare.com.au" style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:11px;font-weight:700;color:#111e2d;text-decoration:none;">sales@sectorcare.com.au</a>
+          <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;color:#475666;margin:3px 0 0;">Mon – Fri, 9am – 5pm AEST</p>
+        </td>
+      </tr></table>
     </td>
   </tr>
-  <!-- ════ CONTACT BAND ════ -->
   <tr>
-    <td style="background-color:#233543; padding:28px 36px;">
-      <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:10px; color:#96a3ac;
-                letter-spacing:2.5px; text-transform:uppercase; text-align:center;
-                padding-bottom:16px;">
-        Need Help?
+    <td style="background:#06141b;padding:18px 36px;text-align:center;">
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;color:#475666;line-height:1.7;margin:0 0 8px;letter-spacing:0.5px;">
+        You received this email because you recently visited our store.<br/>{{ organization.name }} &nbsp;|&nbsp; {{ organization.full_address }}
       </p>
-      <table border="0" cellpadding="0" cellspacing="0" width="100%">
-        <tr>
-          <!-- Phone -->
-          <td width="300" valign="top"
-              style="padding:0 12px; text-align:center; vertical-align:top;
-                     border-right:1px solid #475666;">
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:18px; color:#3A9AD9;
-                      padding-bottom:6px;">&#9742;&#xFE0E;</p>
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:9px; color:#96a3ac;
-                      letter-spacing:1.5px; text-transform:uppercase; padding-bottom:4px;">
-              Phone
-            </p>
-            <a href="tel:0291725607"
-               style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:12px; font-weight:700;
-                      color:#FFFFFF; text-decoration:none; letter-spacing:0.5px;">
-              02 9172 5607
-            </a>
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:9px; color:#96a3ac;
-                      letter-spacing:0.5px; padding-top:4px;">
-              Mon – Fri, 9am – 5pm AEST
-            </p>
-          </td>
-          <!-- Email -->
-          <td width="300" valign="top"
-              style="padding:0 12px; text-align:center; vertical-align:top;">
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:18px; color:#3A9AD9;
-                      padding-bottom:6px;">&#9993;</p>
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:9px; color:#96a3ac;
-                      letter-spacing:1.5px; text-transform:uppercase; padding-bottom:4px;">
-              Email
-            </p>
-            <a href="mailto:sales@sectorcare.com.au"
-               style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:11px; font-weight:700;
-                      color:#FFFFFF; text-decoration:none; letter-spacing:0.3px;">
-              sales@sectorcare.com.au
-            </a>
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:9px; color:#96a3ac;
-                      letter-spacing:0.5px; padding-top:4px;">
-              Mon – Fri, 9am – 5pm AEST
-            </p>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-
-  <!-- ════ FOOTER ════ -->
-  <tr>
-    <td style="background:#06141b; padding:22px 36px; text-align:center;">
-      <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:9px; color:#475666;
-                line-height:1.8; letter-spacing:0.8px; padding-bottom:6px;">
-        You received this email because you recently visited our store.<br/>
-        {{ organization.name }} &nbsp;|&nbsp; {{ organization.full_address }}
-      </p>
-      <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:9px; color:#475666;
-                line-height:1.5; padding-bottom:0;">
-        <a href="{% unsubscribe %}" target="_blank"
-           style="color:#96a3ac; text-decoration:underline;">Unsubscribe</a>
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;margin:0;">
+        <a href="{% unsubscribe %}" target="_blank" style="color:#96a3ac;text-decoration:underline;">Unsubscribe</a>
         &nbsp;&middot;&nbsp;
-        <a href="https://www.sectorcare.com.au/privacy" target="_blank"
-           style="color:#96a3ac; text-decoration:underline;">Privacy Policy</a>
+        <a href="https://www.sectorcare.com.au/privacy" target="_blank" style="color:#96a3ac;text-decoration:underline;">Privacy Policy</a>
       </p>
     </td>
   </tr>
-
-</table><!-- /inner -->
+</table>
 </td></tr>
-</table><!-- /outer -->
-
+</table>
 </body>
 </html>

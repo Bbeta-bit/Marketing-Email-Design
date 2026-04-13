@@ -1,341 +1,121 @@
 <!DOCTYPE html>
 <!--
-  WELCOME EMAIL: "Welcome to the SectorCare Family"
-  Purpose: First email after sign-up — deliver $20 discount code, warm first impression
-  Campaign Name (Klaviyo): SC Welcome | New Subscriber
-  Subject line: Welcome to SectorCare — here's $20 off your first order
-  Preview text: Your exclusive discount code is inside.
+  WELCOME EMAIL: New Subscriber
+  Purpose: First email after sign-up, $20 discount
+  Klaviyo: {{ person.first_name|default:"there" }}
   Sender: SectorCare
-
-  Klaviyo variables: {{ person.first_name|default:"there" }},
-                     {{ organization.name }}, {{ organization.full_address }}
-  Web view:    {% web_view %}
-  Unsubscribe: {% unsubscribe %}
-
-  LOGO:
-  - https://cdn11.bigcommerce.com/s-498h0egvgn/stencil/559850c0-deee-013e-2e3b-16ada176a371/e/5e7ca7d0-f6a7-013e-7fd8-56bef2ceb47a/img/sectorcare.svg
-  HERO (wheelchair, Klaviyo CDN):
-  - https://d3k81ch9hvuctc.cloudfront.net/company/W2Ua5v/images/3559e029-ad75-4195-9ba1-51d6de31f7ab.jpeg
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Welcome to SectorCare</title>
 <style>
-  #outlook a { padding:0; }
-  body { margin:0; padding:0; background-color:#c9cacf;
-         -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; }
-  table, td { border-collapse:collapse; mso-table-lspace:0; mso-table-rspace:0; }
-  img { border:0; line-height:100%; outline:none; text-decoration:none; max-width:100%; }
-  p, h1, h2, h3 { margin:0; }
+#outlook a{padding:0}
+body{margin:0;padding:0;background:#f5f7fa;-webkit-text-size-adjust:100%}
+table,td{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0}
+img{border:0;outline:none;text-decoration:none;max-width:100%}
+p,h1,h2,h3{margin:0;padding:0}
+@media only screen and (max-width:600px){
+  .ew{width:100%!important}
+  .mp{padding-left:20px!important;padding-right:20px!important}
+  .pc{width:100%!important;display:block!important;border-right:none!important;border-bottom:1px solid #e4e8ed!important}
+  .cc{width:100%!important;display:block!important;border-right:none!important;padding-bottom:14px!important}
+  .hh{font-size:26px!important}
+}
 
-  @media only screen and (max-width:600px) {
-    .email-wrap   { width:100% !important; }
-    .logo-img     { max-width:160px !important; }
-    /* Hero stack */
-    .hero-text    { width:100% !important; display:block !important;
-                    padding:30px 24px 20px !important; }
-    .hero-img-td  { width:100% !important; display:block !important;
-                    text-align:center !important; }
-    .hero-photo   { width:260px !important; margin:0 auto !important; }
-    /* Feature stack */
-    .feat-col     { width:100% !important; display:block !important;
-                    border-right:none !important;
-                    border-bottom:1px solid #475666 !important; }
-  }
 </style>
 </head>
-<body style="background-color:#c9cacf; margin:0; padding:0;">
-
-<!-- ═══ OUTER WRAPPER ═══ -->
-<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"
-       style="background-color:#c9cacf;">
-<tr><td align="center" style="padding:24px 0 32px;">
-
-<!-- ═══ 600px CONTAINER ═══ -->
-<table class="email-wrap" border="0" cellpadding="0" cellspacing="0" width="600"
-       style="max-width:600px; background-color:#FFFFFF;
-              box-shadow:0 2px 12px rgba(0,0,0,0.18);">
-
-  <!-- ══ UTILITY BAR ══ -->
+<body style="background-color:#f5f7fa;margin:0;padding:0;">
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:#f5f7fa;">
+<tr><td align="center" style="padding:20px 0 28px;">
+<table class="ew" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;background-color:#FFFFFF;box-shadow:0 2px 16px rgba(0,0,0,0.10);">
   <tr>
-    <td style="background-color:#06141b; padding:7px 20px; text-align:center;">
-      <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:10px; color:#96a3ac; letter-spacing:0.8px;">
-        Trouble viewing this email?
-        <a href="{% web_view %}" target="_blank"
-           style="color:#96a3ac; text-decoration:underline;">View in browser</a>
-      </p>
+    <td style="background:#f5f7fa;padding:7px 20px;text-align:center;border-bottom:1px solid #e4e8ed;">
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:10px;color:#475666;">Trouble viewing this email? <a href="{% web_view %}" target="_blank" style="color:#3A9AD9;text-decoration:underline;">View in browser</a></p>
     </td>
   </tr>
-
-  <!-- ══ LOGO ══ -->
   <tr>
-    
-    <td style="background:#FFFFFF; padding:14px 28px; border-bottom:1px solid #e4e8ed;">
-      <table border="0" cellpadding="0" cellspacing="0" width="100%">
-        <tr>
-          <td valign="middle">
-            <a href="https://sectorcare.com.au/" target="_blank" style="display:block; line-height:0;">
-        <img class="logo-img" alt="SectorCare"
-             src="https://cdn11.bigcommerce.com/s-498h0egvgn/stencil/559850c0-deee-013e-2e3b-16ada176a371/e/5e7ca7d0-f6a7-013e-7fd8-56bef2ceb47a/img/sectorcare.svg"
-             style="max-width:160px; height:auto; display:inline-block;"/>
+    <td style="background:#FFFFFF;padding:20px 36px 14px;text-align:center;border-bottom:3px solid #3A9AD9;">
+      <a href="https://sectorcare.com.au/" target="_blank" style="display:inline-block;margin-bottom:8px;">
+        <img alt="SectorCare" src="https://d3k81ch9hvuctc.cloudfront.net/company/W2Ua5v/images/47898cac-310d-44a3-8d9a-29791b93b07d.png" style="height:36px;width:auto;display:block;margin:0 auto;" height="36"/>
       </a>
-          </td>
-          <td valign="middle" align="right" class="nav-links" style="padding-left:12px; white-space:nowrap;">
-          <a href="https://sectorcare.com.au/manual-wheelchair/" target="_blank"
-             style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:10px; font-weight:600; color:#475666;
-                    text-decoration:none; letter-spacing:1.2px; text-transform:uppercase;">WHEELCHAIRS</a>
-          <span style="color:#c9cacf; padding:0 5px;">|</span>
-          <a href="https://sectorcare.com.au/mobility-scooter/" target="_blank"
-             style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:10px; font-weight:600; color:#475666;
-                    text-decoration:none; letter-spacing:1.2px; text-transform:uppercase;">SCOOTERS</a>
-          <span style="color:#c9cacf; padding:0 5px;">|</span>
-          <a href="https://sectorcare.com.au/electric-wheelchair/" target="_blank"
-             style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:10px; font-weight:600; color:#475666;
-                    text-decoration:none; letter-spacing:1.2px; text-transform:uppercase;">POWER CHAIRS</a>
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;color:#3A9AD9;letter-spacing:3px;text-transform:uppercase;">WELCOME TO THE FAMILY</p>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:0;line-height:0;font-size:0;">
+      <a href="https://sectorcare.com.au/" target="_blank" style="display:block;line-height:0;">
+        <img src="https://d3k81ch9hvuctc.cloudfront.net/company/W2Ua5v/images/3559e029-ad75-4195-9ba1-51d6de31f7ab.jpeg" alt="SectorCare" width="600" style="display:block;width:100%;height:auto;"/>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="mp" style="background:#FFFFFF;padding:30px 40px 26px;border-bottom:1px solid #e4e8ed;">
+      <h1 class="hh" style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:34px;font-weight:700;color:#111e2d;line-height:1.2;margin:0 0 10px;">
+        You’re now part of<br/><span style="color:#3A9AD9;">the SectorCare family.</span>
+      </h1>
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:13px;color:#475666;line-height:1.72;margin:0 0 20px;">Australia’s trusted source for premium mobility and independence solutions. SectorCare is a registered NDIS provider.</p>
+      <table border="0" cellpadding="0" cellspacing="0"><tr>
+        <td style="background:#3A9AD9;border-radius:4px;">
+          <a href="https://sectorcare.com.au/" target="_blank" style="display:inline-block;padding:11px 28px;font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:11px;font-weight:700;color:#FFFFFF;text-decoration:none;letter-spacing:1.5px;text-transform:uppercase;">EXPLORE OUR RANGE</a>
         </td>
-        </tr>
-      </table>
+      </tr></table>
     </td>
   </tr>
-
-  <!-- ══ HERO: split — text left / product right ══ -->
   <tr>
-    <td style="background-color:#111e2d; padding:0;">
-      <table border="0" cellpadding="0" cellspacing="0" width="100%">
-        <tr>
-
-          <!-- Left: headline + CTA -->
-          <td class="hero-text" width="310" valign="middle"
-              style="padding:44px 32px 44px 36px; vertical-align:middle;">
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:10px; color:#96a3ac;
-                      letter-spacing:2.5px; text-transform:uppercase; padding-bottom:10px;">
-              Welcome, {{ person.first_name|default:"friend" }}
-            </p>
-            <h1 style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:36px; font-weight:700;
-                       color:#FFFFFF; line-height:1.2; padding-bottom:14px;">
-              You're now part of the SectorCare family.
-            </h1>
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:11px; color:#96a3ac;
-                      line-height:1.7; letter-spacing:0.3px; padding-bottom:24px;">
-              Australia's trusted source for premium mobility and independence solutions.
-            </p>
-            <!-- CTA button -->
-            <table border="0" cellpadding="0" cellspacing="0">
-              <tr>
-                <td style="background-color:#3A9AD9; border-radius:4px;">
-                  <a href="https://sectorcare.com.au/" target="_blank"
-                     style="display:inline-block; padding:11px 26px;
-                            font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:11px; font-weight:700;
-                            color:#FFFFFF; text-decoration:none;
-                            letter-spacing:2px; text-transform:uppercase;
-                            mso-padding-alt:11px 26px;">
-                    SHOP NOW
-                  </a>
-                </td>
-              </tr>
-            </table>
-          </td>
-
-          <!-- Right: wheelchair photo -->
-          <td class="hero-img-td" width="290" valign="bottom"
-              style="padding:0; vertical-align:bottom; text-align:right; line-height:0;">
-            <a href="https://sectorcare.com.au/manual-wheelchair/" target="_blank"
-               style="display:block; line-height:0;">
-              <img class="hero-photo" alt="SectorCare Manual Wheelchair"
-                   src="https://d3k81ch9hvuctc.cloudfront.net/company/W2Ua5v/images/3559e029-ad75-4195-9ba1-51d6de31f7ab.jpeg"
-                   width="290"
-                   style="display:block; width:290px; max-width:100%; height:auto;"/>
-            </a>
-          </td>
-
-        </tr>
-      </table>
+    <td class="mp" style="background:#FFFFFF;padding:22px 40px 26px;border-bottom:1px solid #e4e8ed;">
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:13px;color:#475666;line-height:1.75;">Hi {{ person.first_name|default:"there" }}, welcome to SectorCare! Whether you need a manual wheelchair, mobility scooter, or daily living aid, our team is dedicated to helping you move with confidence. Use the code below at checkout on any order over $200 — it’s our way of saying welcome.</p>
     </td>
   </tr>
-
-  <!-- ══ PROMO CODE BAND ══ -->
   <tr>
-    <td style="background-color:#06141b; padding:30px 36px; text-align:center;">
-      <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:10px; color:#96a3ac;
-                letter-spacing:2.5px; text-transform:uppercase; padding-bottom:6px;">
-        Your exclusive welcome offer
-      </p>
-      <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:20px; font-weight:700;
-                color:#FFFFFF; letter-spacing:0.5px; line-height:1.3; padding-bottom:18px;">
-        $20 OFF your first order over $200
-      </p>
-      <!-- Code box -->
-      <table border="0" cellpadding="0" cellspacing="0" align="center">
-        <tr>
-          <td style="border:2px dashed #475666; border-radius:4px;
-                     padding:12px 36px; background-color:#111e2d;">
-            <p style="font-family:'Courier New', Courier, monospace; font-size:22px;
-                      font-weight:700; color:#FFFFFF; letter-spacing:6px;">
-              V83Q783772
-            </p>
-          </td>
-        </tr>
-      </table>
-      <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:9px; color:#475666;
-                letter-spacing:1px; text-transform:uppercase; padding-top:12px;">
-        Enter at checkout &nbsp;&middot;&nbsp; Single use &nbsp;&middot;&nbsp; No expiry
-      </p>
+    <td style="background:#06141b;padding:28px 36px;text-align:center;border-bottom:1px solid #1a2f40;">
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:10px;color:#96a3ac;letter-spacing:2.5px;text-transform:uppercase;margin:0 0 8px;">Your exclusive welcome offer — $20 OFF</p>
+      <table border="0" cellpadding="0" cellspacing="0" align="center" style="margin-bottom:12px;"><tr>
+        <td style="border:2px dashed #475666;border-radius:4px;background:#111e2d;padding:12px 32px;">
+          <span style="font-family:'Courier New',Courier,monospace;font-size:22px;font-weight:700;color:#FFFFFF;letter-spacing:6px;">V83Q783772</span>
+        </td>
+      </tr></table>
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;color:#475666;letter-spacing:1px;text-transform:uppercase;">Enter at checkout · Single use · No expiry</p>
     </td>
   </tr>
-
-  <!-- ══ PERSONALISED GREETING ══ -->
   <tr>
-    <td style="background-color:#FFFFFF; padding:32px 36px 24px;">
-      <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:13px; font-weight:700;
-                color:#111e2d; letter-spacing:0.3px; padding-bottom:12px;">
-        Hi {{ person.first_name|default:"there" }},
-      </p>
-      <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:12px; color:#475666;
-                line-height:1.75; letter-spacing:0.2px; padding-bottom:12px;">
-        Welcome to SectorCare! We're so glad you're here. Whether you need a manual
-        wheelchair, mobility scooter, or daily living aid, our team is dedicated to
-        helping you move with confidence and live life on your terms.
-      </p>
-      <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:12px; color:#475666;
-                line-height:1.75; letter-spacing:0.2px;">
-        Use the code above at checkout on any order over $200 — it's our way of saying
-        welcome to the family. We look forward to supporting you every step of the way.
-      </p>
+    <td style="background:#f5f7fa;padding:8px 40px;text-align:center;border-top:1px solid #e4e8ed;">
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;color:#3A9AD9;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;">SectorCare is a Registered NDIS Provider</p>
     </td>
   </tr>
-
-  <!-- Divider -->
   <tr>
-    <td style="padding:0 36px;">
-      <table border="0" cellpadding="0" cellspacing="0" width="100%">
-        <tr><td style="border-top:1px solid #c9cacf; font-size:0; line-height:0;">&nbsp;</td></tr>
-      </table>
+    <td style="background:#f5f7fa;padding:18px 40px 24px;border-bottom:1px solid #e4e8ed;">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+        <td class="cc" width="50%" valign="top" style="text-align:center;border-right:1px solid #e4e8ed;padding:0 12px;">
+          <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:20px;color:#3A9AD9;margin:0 0 4px;">&#9742;&#xFE0E;</p>
+          <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:10px;font-weight:700;color:#111e2d;margin:0 0 3px;">Phone</p>
+          <a href="tel:0291725607" style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:13px;font-weight:700;color:#111e2d;text-decoration:none;">02 9172 5607</a>
+          <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;color:#475666;margin:3px 0 0;">Mon – Fri, 9am – 5pm AEST</p>
+        </td>
+        <td class="cc" width="50%" valign="top" style="text-align:center;padding:0 12px;">
+          <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:20px;color:#3A9AD9;margin:0 0 4px;">&#9993;</p>
+          <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:10px;font-weight:700;color:#111e2d;margin:0 0 3px;">Email</p>
+          <a href="mailto:sales@sectorcare.com.au" style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:11px;font-weight:700;color:#111e2d;text-decoration:none;">sales@sectorcare.com.au</a>
+          <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;color:#475666;margin:3px 0 0;">Mon – Fri, 9am – 5pm AEST</p>
+        </td>
+      </tr></table>
     </td>
   </tr>
-
-  <!-- ══ WHY SECTORCARE — 3 pillars ══ -->
   <tr>
-    <td style="background-color:#06141b; padding:28px 24px;">
-      <table border="0" cellpadding="0" cellspacing="0" width="100%">
-        <tr>
-          <td width="33%" class="feat-col" valign="top" style="text-align:center; padding:10px 14px; vertical-align:top; border-right:1px solid #1a2f40;">
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:22px; color:#3A9AD9; padding-bottom:8px;">&#9670;</p>
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:10px; font-weight:700; color:#FFFFFF; letter-spacing:1px; text-transform:uppercase; padding-bottom:6px;">NDIS Registered</p>
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:9px; color:#96a3ac; line-height:1.6; letter-spacing:0.2px;">Approved NDIS provider &mdash; we&rsquo;ll help you access the right product using your funding.</p>
-          </td>
-          <td width="33%" class="feat-col" valign="top" style="text-align:center; padding:10px 14px; vertical-align:top; border-right:1px solid #1a2f40;">
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:22px; color:#3A9AD9; padding-bottom:8px;">&#9742;&#xFE0E;</p>
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:10px; font-weight:700; color:#FFFFFF; letter-spacing:1px; text-transform:uppercase; padding-bottom:6px;">Expert Guidance</p>
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:9px; color:#96a3ac; line-height:1.6; letter-spacing:0.2px;">Our advisors match you with the right product for your lifestyle and mobility goals.</p>
-          </td>
-          <td width="33%" class="feat-col" valign="top" style="text-align:center; padding:10px 14px; vertical-align:top;">
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:22px; color:#3A9AD9; padding-bottom:8px;">&#10003;</p>
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:10px; font-weight:700; color:#FFFFFF; letter-spacing:1px; text-transform:uppercase; padding-bottom:6px;">Quality Assured</p>
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:9px; color:#96a3ac; line-height:1.6; letter-spacing:0.2px;">Every product is tested for safety, durability and daily reliability you can count on.</p>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-
-  <!-- ══ CONTACT BAND ══ -->
-  <tr>
-    <td style="background-color:#233543; padding:28px 36px;">
-      <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:10px; color:#96a3ac;
-                letter-spacing:2.5px; text-transform:uppercase; text-align:center;
-                padding-bottom:16px;">
-        Need Help?
+    <td style="background:#06141b;padding:18px 36px;text-align:center;">
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;color:#475666;line-height:1.7;margin:0 0 8px;letter-spacing:0.5px;">
+        You’re receiving this email because you subscribed to SectorCare updates.<br/>{{ organization.name }} &nbsp;|&nbsp; {{ organization.full_address }}
       </p>
-      <table border="0" cellpadding="0" cellspacing="0" width="100%">
-        <tr>
-          <!-- Phone -->
-          <td width="300" valign="top"
-              style="padding:0 12px; text-align:center; vertical-align:top;
-                     border-right:1px solid #475666;">
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:18px; color:#3A9AD9;
-                      padding-bottom:6px;">&#9742;&#xFE0E;</p>
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:9px; color:#96a3ac;
-                      letter-spacing:1.5px; text-transform:uppercase; padding-bottom:4px;">
-              Phone
-            </p>
-            <a href="tel:0291725607"
-               style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:12px; font-weight:700;
-                      color:#FFFFFF; text-decoration:none; letter-spacing:0.5px;">
-              02 9172 5607
-            </a>
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:9px; color:#96a3ac;
-                      letter-spacing:0.5px; padding-top:4px;">
-              Mon – Fri, 9am – 5pm AEST
-            </p>
-          </td>
-          <!-- Email -->
-          <td width="300" valign="top"
-              style="padding:0 12px; text-align:center; vertical-align:top;">
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:18px; color:#3A9AD9;
-                      padding-bottom:6px;">&#9993;</p>
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:9px; color:#96a3ac;
-                      letter-spacing:1.5px; text-transform:uppercase; padding-bottom:4px;">
-              Email
-            </p>
-            <a href="mailto:sales@sectorcare.com.au"
-               style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:11px; font-weight:700;
-                      color:#FFFFFF; text-decoration:none; letter-spacing:0.3px;">
-              sales@sectorcare.com.au
-            </a>
-            <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:9px; color:#96a3ac;
-                      letter-spacing:0.5px; padding-top:4px;">
-              Mon – Fri, 9am – 5pm AEST
-            </p>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-
-  <!-- ══ SECOND CTA ══ -->
-  <tr>
-    <td style="background-color:#111e2d; padding:32px 36px; text-align:center;">
-      <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:12px; color:#96a3ac;
-                line-height:1.7; padding-bottom:22px;">
-        Ready to explore? Browse our full range of mobility solutions and find
-        the perfect fit for your needs.
-      </p>
-      <table border="0" cellpadding="0" cellspacing="0" align="center">
-        <tr>
-          <td style="background-color:#3A9AD9; border-radius:4px;">
-            <a href="https://sectorcare.com.au/" target="_blank"
-               style="display:inline-block; padding:13px 40px;
-                      font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:12px; font-weight:700;
-                      color:#FFFFFF; text-decoration:none;
-                      letter-spacing:2px; text-transform:uppercase;
-                      mso-padding-alt:13px 40px;">
-              EXPLORE OUR RANGE
-            </a>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-
-  <!-- ══ FOOTER ══ -->
-  <tr>
-    <td style="background-color:#06141b; padding:22px 30px; text-align:center;">
-      <p style="font-family:'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size:9px; color:#475666;
-                line-height:1.8; letter-spacing:0.8px;">
-        You're receiving this email because you subscribed to SectorCare updates.<br/>
-        No longer want to receive these emails?
-        <a href="{% unsubscribe %}" style="color:#96a3ac; text-decoration:underline;">Unsubscribe</a>.<br/><br/>
-        {{ organization.name }} &nbsp;|&nbsp; {{ organization.full_address }}
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;margin:0;">
+        <a href="{% unsubscribe %}" target="_blank" style="color:#96a3ac;text-decoration:underline;">Unsubscribe</a>
+        &nbsp;&middot;&nbsp;
+        <a href="https://www.sectorcare.com.au/privacy" target="_blank" style="color:#96a3ac;text-decoration:underline;">Privacy Policy</a>
       </p>
     </td>
   </tr>
-
-</table><!-- /container -->
+</table>
 </td></tr>
-</table><!-- /outer -->
-
+</table>
 </body>
 </html>
