@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <!--
-  POST-PURCHASE EMAIL 2: Use Your Coupon — Care & Accessories
-  Subject: Don't forget your $5 code — great for accessories
-  Preview: Cushions, spare parts, daily living aids and more
+  POST-PURCHASE EMAIL 2: Thank-You Coupon
+  Subject: Thanks! Here's your $5 coupon
+  Preview: No minimum spend — use it on assisted living aids, accessories and more
   Sender: SectorCare <sales@sectorcare.com.au>
-  Trigger: Day 9 after purchase (4 days after survey email)
-  Purpose: Remind customer of THANKYOU5 coupon delivered in Email 1.
-           Highlight small-ticket care and accessory products as ideal use case.
-           Note: THANKYOU5 coupon was already delivered in Email 1 (no separate delivery needed).
+  Trigger: Klaviyo Flow — sent immediately after customer clicks any survey button
+           in Email 1. Flow Conditional Split detects "Clicked Email" URL containing
+           "role=" → Update Profile Property (user_role) → Send this email.
+  Purpose: Deliver THANKYOU5 coupon as promised reward for completing survey.
+           Highlight Assisted Living products as ideal small-ticket coupon use case.
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Your $5 code is still waiting | SectorCare</title>
+<title>Your $5 thank-you coupon | SectorCare</title>
 <style>
 #outlook a{padding:0}
 body{margin:0;padding:0;background:#f5f7fa;-webkit-text-size-adjust:100%}
@@ -47,7 +48,16 @@ p,h1,h2,h3{margin:0;padding:0}
       <a href="https://sectorcare.com.au/" target="_blank" style="display:inline-block;margin-bottom:8px;">
         <img alt="SectorCare" src="https://d3k81ch9hvuctc.cloudfront.net/company/W2Ua5v/images/47898cac-310d-44a3-8d9a-29791b93b07d.png" style="height:36px;width:auto;display:block;margin:0 auto;" height="36"/>
       </a>
-      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;color:#3A9AD9;letter-spacing:3px;text-transform:uppercase;">A LITTLE REMINDER</p>
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;color:#3A9AD9;letter-spacing:3px;text-transform:uppercase;">YOUR THANK-YOU REWARD</p>
+    </td>
+  </tr>
+
+  <!-- HERO IMAGE -->
+  <tr>
+    <td style="padding:0;line-height:0;font-size:0;">
+      <a href="https://sectorcare.com.au/" target="_blank" style="display:block;line-height:0;">
+        <img src="https://d3k81ch9hvuctc.cloudfront.net/company/W2Ua5v/images/3559e029-ad75-4195-9ba1-51d6de31f7ab.jpeg" alt="SectorCare" width="600" style="display:block;width:100%;height:auto;"/>
+      </a>
     </td>
   </tr>
 
@@ -55,17 +65,21 @@ p,h1,h2,h3{margin:0;padding:0}
   <tr>
     <td class="mp" style="background:#FFFFFF;padding:30px 40px 26px;border-bottom:1px solid #e4e8ed;">
       <h1 class="hh" style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:34px;font-weight:700;color:#111e2d;line-height:1.2;margin:0 0 10px;">
-        Your $5 code<br/><span style="color:#3A9AD9;">is still waiting.</span>
+        Thanks,<br/><span style="color:#3A9AD9;">{{ person.first_name|default:"there" }}!</span>
       </h1>
-      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:13px;color:#475666;line-height:1.72;margin:0 0 16px;">We sent you a <strong style="color:#111e2d;">THANKYOU5</strong> code as a thank-you for answering our quick survey. It doesn't expire and there's no minimum spend — so it's perfect for picking up small care items you might need.</p>
-      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:13px;color:#475666;line-height:1.72;margin:0;">Our website carries a wide range of <strong style="color:#111e2d;">care and maintenance products</strong> for wheelchairs, scooters, and daily use — things like seat cushions, pressure-relief overlays, gloves, bag hooks, cup holders, tyre repair kits, and USB accessories. All at small-ticket prices, and all eligible for your code.</p>
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:13px;color:#475666;line-height:1.72;margin:0 0 20px;">Thanks for letting us know — it helps us send you the right information going forward. As promised, here's your thank-you code:</p>
+      <table border="0" cellpadding="0" cellspacing="0"><tr>
+        <td style="background:#3A9AD9;border-radius:4px;">
+          <a href="https://sectorcare.com.au/?utm_source=klaviyo&utm_medium=email&utm_campaign=postpurchase_thankyou" target="_blank" style="display:inline-block;padding:11px 28px;font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:11px;font-weight:700;color:#FFFFFF;text-decoration:none;letter-spacing:1.5px;text-transform:uppercase;">SHOP NOW &rarr;</a>
+        </td>
+      </tr></table>
     </td>
   </tr>
 
-  <!-- COUPON REMINDER BOX -->
+  <!-- COUPON CODE BOX -->
   <tr>
     <td style="background:#06141b;padding:28px 36px;text-align:center;border-bottom:1px solid #1a2f40;">
-      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:10px;color:#96a3ac;letter-spacing:2.5px;text-transform:uppercase;margin:0 0 14px;">Your coupon code</p>
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:10px;color:#96a3ac;letter-spacing:2.5px;text-transform:uppercase;margin:0 0 14px;">Your $5 coupon code</p>
       <table border="0" cellpadding="0" cellspacing="0" align="center" style="margin-bottom:12px;"><tr>
         <td style="border:2px dashed #475666;border-radius:4px;background:#111e2d;padding:12px 32px;">
           <span style="font-family:'Courier New',Courier,monospace;font-size:22px;font-weight:700;color:#FFFFFF;letter-spacing:6px;">THANKYOU5</span>
@@ -75,7 +89,14 @@ p,h1,h2,h3{margin:0;padding:0}
     </td>
   </tr>
 
-  <!-- CATEGORY CARDS -->
+  <!-- BODY TEXT: Assisted Living products -->
+  <tr>
+    <td class="mp" style="background:#FFFFFF;padding:22px 40px 26px;border-bottom:1px solid #e4e8ed;">
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:13px;color:#475666;line-height:1.75;">Your coupon works on everything in our store — including our <strong style="color:#111e2d;">Assisted Living</strong> range. We carry shower chairs, bath and toilet aids, transfer benches, crutches, walking frames, and daily living accessories. They're perfect for a small top-up order with no minimum spend required.</p>
+    </td>
+  </tr>
+
+  <!-- CATEGORY CARDS: 3-col -->
   <tr>
     <td class="mp" style="background:#FFFFFF;padding:24px 40px 6px;">
       <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;font-weight:700;color:#3A9AD9;letter-spacing:2.5px;text-transform:uppercase;text-align:center;">BROWSE BY CATEGORY</p>
@@ -102,14 +123,14 @@ p,h1,h2,h3{margin:0;padding:0}
             <tr><td>
               <table border="0" cellpadding="0" cellspacing="0"><tr>
                 <td style="background:#3A9AD9;border-radius:3px;">
-                  <a href="https://sectorcare.com.au/electric-wheelchair/?utm_source=klaviyo&utm_medium=email&utm_campaign=postpurchase_coupon" target="_blank" style="display:inline-block;padding:7px 14px;font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;font-weight:700;color:#FFFFFF;text-decoration:none;letter-spacing:1px;text-transform:uppercase;">SHOP NOW</a>
+                  <a href="https://sectorcare.com.au/electric-wheelchair/?utm_source=klaviyo&utm_medium=email&utm_campaign=postpurchase_thankyou" target="_blank" style="display:inline-block;padding:7px 14px;font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;font-weight:700;color:#FFFFFF;text-decoration:none;letter-spacing:1px;text-transform:uppercase;">SHOP NOW</a>
                 </td>
               </tr></table>
             </td></tr>
           </table>
         </td>
 
-        <!-- Manual Wheelchairs -->
+        <!-- Manual Wheelchair -->
         <td class="pc" width="186" valign="top" style="padding:16px 12px;vertical-align:top;border-right:1px solid #e4e8ed;">
           <table border="0" cellpadding="0" cellspacing="0" style="margin-bottom:10px;"><tr>
             <td style="background:#233543;border-radius:50%;width:40px;height:40px;text-align:center;vertical-align:middle;">
@@ -126,14 +147,14 @@ p,h1,h2,h3{margin:0;padding:0}
             <tr><td>
               <table border="0" cellpadding="0" cellspacing="0"><tr>
                 <td style="background:#3A9AD9;border-radius:3px;">
-                  <a href="https://sectorcare.com.au/manual-wheelchair/?utm_source=klaviyo&utm_medium=email&utm_campaign=postpurchase_coupon" target="_blank" style="display:inline-block;padding:7px 14px;font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;font-weight:700;color:#FFFFFF;text-decoration:none;letter-spacing:1px;text-transform:uppercase;">SHOP NOW</a>
+                  <a href="https://sectorcare.com.au/manual-wheelchair/?utm_source=klaviyo&utm_medium=email&utm_campaign=postpurchase_thankyou" target="_blank" style="display:inline-block;padding:7px 14px;font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;font-weight:700;color:#FFFFFF;text-decoration:none;letter-spacing:1px;text-transform:uppercase;">SHOP NOW</a>
                 </td>
               </tr></table>
             </td></tr>
           </table>
         </td>
 
-        <!-- Mobility Scooters -->
+        <!-- Mobility Scooter -->
         <td class="pc" width="186" valign="top" style="padding:16px 12px;vertical-align:top;">
           <table border="0" cellpadding="0" cellspacing="0" style="margin-bottom:10px;"><tr>
             <td style="background:#233543;border-radius:50%;width:40px;height:40px;text-align:center;vertical-align:middle;">
@@ -150,7 +171,7 @@ p,h1,h2,h3{margin:0;padding:0}
             <tr><td>
               <table border="0" cellpadding="0" cellspacing="0"><tr>
                 <td style="background:#3A9AD9;border-radius:3px;">
-                  <a href="https://sectorcare.com.au/mobility-scooter/?utm_source=klaviyo&utm_medium=email&utm_campaign=postpurchase_coupon" target="_blank" style="display:inline-block;padding:7px 14px;font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;font-weight:700;color:#FFFFFF;text-decoration:none;letter-spacing:1px;text-transform:uppercase;">SHOP NOW</a>
+                  <a href="https://sectorcare.com.au/mobility-scooter/?utm_source=klaviyo&utm_medium=email&utm_campaign=postpurchase_thankyou" target="_blank" style="display:inline-block;padding:7px 14px;font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;font-weight:700;color:#FFFFFF;text-decoration:none;letter-spacing:1px;text-transform:uppercase;">SHOP NOW</a>
                 </td>
               </tr></table>
             </td></tr>
@@ -164,7 +185,8 @@ p,h1,h2,h3{margin:0;padding:0}
   <!-- SIGN-OFF -->
   <tr>
     <td class="mp" style="background:#FFFFFF;padding:22px 40px 26px;border-bottom:1px solid #e4e8ed;">
-      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:13px;color:#475666;line-height:1.75;">Thanks again for choosing SectorCare. If you ever have questions about your equipment or need help finding the right accessory, our team is always happy to help.<br/><br/><strong style="color:#111e2d;">The SectorCare team</strong></p>
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:13px;color:#475666;line-height:1.75;">Thanks again for choosing SectorCare. If you ever have questions about your equipment or need help finding the right product, our team is always happy to help.</p>
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:13px;color:#111e2d;font-weight:700;line-height:1.75;margin:6px 0 0;">The SectorCare team</p>
     </td>
   </tr>
 
