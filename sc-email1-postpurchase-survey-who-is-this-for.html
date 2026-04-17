@@ -2,14 +2,15 @@
 <!--
   POST-PURCHASE SURVEY EMAIL 1: Who is this for?
   Subject: Quick question — who's the {{ event.product_name|default:"equipment" }} for?
-  Preview: Answer in one tap — it only takes 2 seconds
+  Preview: Answer in one tap and get a $5 thank-you coupon
   Sender: SectorCare <sales@sectorcare.com.au>
   Trigger: Day 5 after Placed Order (in Post-Purchase Onboarding flow)
-  Purpose: Collect user_role profile property via single-click.
-           Customer taps one of three buttons → Klaviyo tracks Clicked Email →
-           Flow conditional split sets user_role property → triggers Email 2 with coupon.
-  NOTE: This email does NOT contain the coupon. Coupon is delivered in Email 2
-        after the click is registered by the Klaviyo Flow.
+  Flow naming: "Post-Purchase Survey Email 1 - Who Is This For"
+  Purpose: Collect user_role profile property via single-click survey.
+           Customer taps one of three buttons → lands on /survey-thanks landing page.
+           Landing page displays the $5 coupon code and auto-sets user_role via Klaviyo.js.
+  NOTE: This email does NOT contain the coupon. The coupon is revealed on the landing
+        page immediately after the customer clicks a button.
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -52,7 +53,7 @@ p,h1,h2,h3{margin:0;padding:0}
     </td>
   </tr>
 
-  <!-- HERO IMAGE -->
+  <!-- HERO IMAGE (subtle — survey buttons are the focal point) -->
   <tr>
     <td style="padding:0;line-height:0;font-size:0;">
       <a href="https://sectorcare.com.au/" target="_blank" style="display:block;line-height:0;">
@@ -73,9 +74,9 @@ p,h1,h2,h3{margin:0;padding:0}
 
   <!-- SURVEY BUTTONS -->
   <tr>
-    <td class="mp" style="background:#FFFFFF;padding:24px 40px 8px;border-bottom:1px solid #e4e8ed;">
+    <td class="mp" style="background:#FFFFFF;padding:24px 40px 28px;border-bottom:1px solid #e4e8ed;">
 
-      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;color:#3A9AD9;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;margin:0 0 16px;">TAP TO ANSWER — WE'LL SEND YOU A $5 THANK-YOU CODE</p>
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;color:#3A9AD9;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;margin:0 0 18px;">TAP TO ANSWER &#8212; WE'LL SEND YOU A $5 THANK-YOU CODE</p>
 
       <!-- Option 1 -->
       <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:10px;">
@@ -96,7 +97,7 @@ p,h1,h2,h3{margin:0;padding:0}
       </table>
 
       <!-- Option 3 -->
-      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:24px;">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
         <tr>
           <td style="background:#3A9AD9;border-radius:4px;">
             <a href="https://sectorcare.com.au/survey-thanks?role=other&utm_source=klaviyo&utm_medium=email&utm_campaign=postpurchase_survey" target="_blank" style="display:block;padding:14px 24px;font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:13px;font-weight:700;color:#FFFFFF;text-decoration:none;text-align:center;letter-spacing:0.5px;">Other</a>
@@ -107,10 +108,11 @@ p,h1,h2,h3{margin:0;padding:0}
     </td>
   </tr>
 
-  <!-- BODY TEXT: What happens next -->
+  <!-- EXPLAINER + SIGN-OFF -->
   <tr>
     <td class="mp" style="background:#FFFFFF;padding:22px 40px 26px;border-bottom:1px solid #e4e8ed;">
-      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:13px;color:#475666;line-height:1.75;">It only takes one tap. After you answer, we'll send you a <strong style="color:#111e2d;">$5 coupon code</strong> as a thank-you — no minimum spend, valid across our entire range including our <strong style="color:#111e2d;">Assisted Living</strong> collection: shower chairs, bath and toilet aids, transfer benches, crutches, walking frames, and daily living accessories.</p>
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:13px;color:#475666;line-height:1.75;margin:0 0 20px;">It only takes one tap. After you answer, you'll see a <strong style="color:#111e2d;">$5 coupon code</strong> on the next page &#8212; no minimum spend, valid across our entire range including our <strong style="color:#111e2d;">Assisted Living</strong> collection: shower chairs, bath and toilet aids, transfer benches, crutches, walking frames, and daily living accessories.</p>
+      <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:13px;color:#475666;line-height:1.75;margin:0;">Thanks,<br/><strong style="color:#111e2d;">The SectorCare team</strong></p>
     </td>
   </tr>
 
@@ -127,13 +129,13 @@ p,h1,h2,h3{margin:0;padding:0}
           <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:20px;color:#3A9AD9;margin:0 0 4px;">&#9742;&#xFE0E;</p>
           <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:10px;font-weight:700;color:#111e2d;margin:0 0 3px;">Phone</p>
           <a href="tel:0291725607" style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:13px;font-weight:700;color:#111e2d;text-decoration:none;">02 9172 5607</a>
-          <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;color:#475666;margin:3px 0 0;">Mon – Fri, 9am – 5pm AEST</p>
+          <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;color:#475666;margin:3px 0 0;">Mon &#8211; Fri, 9am &#8211; 5pm AEST</p>
         </td>
         <td class="cc" width="50%" valign="top" style="text-align:center;padding:0 12px;">
           <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:20px;color:#3A9AD9;margin:0 0 4px;">&#9993;</p>
           <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:10px;font-weight:700;color:#111e2d;margin:0 0 3px;">Email</p>
           <a href="mailto:sales@sectorcare.com.au" style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:11px;font-weight:700;color:#111e2d;text-decoration:none;">sales@sectorcare.com.au</a>
-          <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;color:#475666;margin:3px 0 0;">Mon – Fri, 9am – 5pm AEST</p>
+          <p style="font-family:'Opposans','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:9px;color:#475666;margin:3px 0 0;">Mon &#8211; Fri, 9am &#8211; 5pm AEST</p>
         </td>
       </tr></table>
     </td>
